@@ -1,0 +1,9 @@
+{
+  "include": [
+    "./resources/js/**/*"
+  ],
+  "compilerOptions": {
+    "strict": false,
+    "target": "ES6"
+  }
+}
