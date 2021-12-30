@@ -1,0 +1,8 @@
+[database]
+    name = 'solana_app'
+    username = 'postgres'
+    password = 'root'
+
+[solana]
+    network = 'devnet'
+    wallet = '<address_wallet>'
