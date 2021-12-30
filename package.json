@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "node .\\node_modules\\mocha\\bin\\mocha"
+    "test": "node .\\node_modules\\mocha\\bin\\mocha",
+    "migrate": "node database/migrations/run.mjs"
   },
   "dependencies": {
     "@solana/wallet-adapter-base": "^0.8.1",
@@ -16,8 +17,12 @@
     "express": "^4.17.2",
     "laravel-mix-react-typescript-extension": "^1.0.3",
     "nunjucks": "^3.2.3",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
     "react": "^17.0.2",
-    "tailwindcss": "^3.0.7"
+    "sequelize": "^6.12.4",
+    "tailwindcss": "^3.0.7",
+    "toml": "^3.0.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.16.5",
