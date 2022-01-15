@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply
+    bg-gray-800
+
+}
+
+header {
+    @apply
+    bg-gray-100
+    p-4
+}
+
+header .container {
+    @apply
+    mx-auto
+    px-4
+}
+
+header nav {
+    @apply
+    flex
+}
+
+header .logo {
+    @apply
+    flex-1
+    text-3xl
+}
+
+header .menu {
+    @apply
+    flex
+}
+
+.menu {
+    @apply
+    mr-3
+}
+
+.menu li {
+    @apply
+    mx-3;
+}
+
+.menu a {
+    @apply
+    text-xl
+    p-2
+}
+
+main {
+    @apply
+    p-4
+    min-h-screen
+    text-white
+}
+
+.app {
+
+}
+
+.app .nav {
+    @apply
+    flex
+}
+
+.app .nav .link {
+    @apply
+    flex-1
+    bg-teal-600
+    text-center
+    mx-4
+    p-2
+}
+
+.app .nav .link.active {
+    @apply
+    bg-teal-900
+}
+
+.app .view {
+    @apply
+    m-4
+    bg-gray-700
+    p-4
+}
+
+footer {
+    @apply
+    p-4
+    bg-gray-900
+    text-white
+}
+
+
