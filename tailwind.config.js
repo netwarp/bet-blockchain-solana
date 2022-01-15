@@ -1,6 +1,7 @@
 module.exports = {
   content: [
-      'views/*'
+      'views/**/*.blade.php',
+      'resources/js/**/*'
   ],
   presets: [],
   darkMode: 'media', // or 'class'
@@ -949,6 +950,6 @@ module.exports = {
     'disabled',
   ],
   plugins: [
-      require('daisyui'),
+    require('daisyui'),
   ],
 }

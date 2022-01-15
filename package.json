@@ -35,6 +35,7 @@
     "mix-tailwindcss": "^1.3.0",
     "mocha": "^9.1.3",
     "nodemon": "^2.0.15",
+    "postcss-import": "^14.0.2",
     "svelte": "^3.44.3",
     "svelte-loader": "^3.1.2",
     "ts-loader": "^9.2.6",

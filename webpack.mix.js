@@ -4,4 +4,4 @@ let mix = require('laravel-mix')
 require('laravel-mix-svelte');
 
 mix.js('resources/js/app.js', 'public/js/app.js').svelte().disableNotifications()
-//mix.postCss('resources/css/app.css', 'public/css/app.css').tailwind().disableNotifications()
+
