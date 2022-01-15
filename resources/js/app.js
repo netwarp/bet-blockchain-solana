@@ -1,3 +1,15 @@
+import Connector from './connector/Connector'
+import App from './app/App'
+
+export const connector = new Connector({
+    target: document.querySelector('#wallet-connector')
+})
+
+export const app = new App({
+    target: document.querySelector('#app')
+})
+
+/*
 import * as web3 from '@solana/web3.js'
 console.log(web3)
 const getProvider = async () => {
@@ -42,8 +54,6 @@ window.addEventListener('load', async () => {
 
 
 })
-
-/*
 
 
 window.addEventListener('load', async () => {
