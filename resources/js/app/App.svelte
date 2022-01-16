@@ -1,6 +1,6 @@
 <script>
     import {view} from './_store'
-
+    import Play from './pages/Play.svelte'
 </script>
 
 <div class="app">
@@ -12,7 +12,7 @@
 
     <div class="view">
         {#if $view === 'play'}
-            Play
+            <Play />
         {:else if $view === 'orders'}
             Orders
         {:else if $view === 'history'}

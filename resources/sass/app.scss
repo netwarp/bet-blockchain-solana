@@ -89,6 +89,23 @@ main {
     p-4
 }
 
+.app #view-play {
+    @apply
+    flex
+    justify-center
+
+}
+
+.app button {
+    @apply
+    px-24
+    py-2
+    text-5xl
+    rounded-lg
+    bg-purple-700
+    hover:bg-purple-600
+}
+
 footer {
     @apply
     p-4

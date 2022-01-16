@@ -1,4 +1,5 @@
 import express from 'express'
+import body_parser from 'body-parser'
 import nunjucks from 'nunjucks'
 import toml from 'toml'
 import fs from 'fs'
@@ -17,6 +18,7 @@ const file = fs.readFileSync('config.toml', 'utf8')
 export const config = toml.parse(file)
 
 const app = express()
+app.use(body_parser.json())
 
 import * as web3 from '@solana/web3.js'
 
@@ -45,5 +47,7 @@ connection.onAccountChange(new web3.PublicKey(config.solana.wallet), (accountInf
     console.log(accountInfo)
     console.log(context)
 })
+
+
 
 app.listen(8080)
