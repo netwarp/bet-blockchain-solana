@@ -73,7 +73,7 @@ main {
 .app .nav .link {
     @apply
     flex-1
-    bg-teal-600
+    bg-teal-900
     text-center
     mx-4
     p-2
@@ -81,7 +81,7 @@ main {
 
 .app .nav .link.active {
     @apply
-    bg-teal-900
+    bg-teal-600
 }
 
 .app .view {
