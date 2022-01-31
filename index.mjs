@@ -4,13 +4,9 @@ import nunjucks from 'nunjucks'
 import toml from 'toml'
 import fs from 'fs'
 import session from 'express-session'
-import redis from 'redis'
-import connectRedis from 'connect-redis'
-const RedisStore = connectRedis(session)
-const redisClient = redis.createClient({
-    host: 'localhost',
-    port: 6379
-})
+
+
+
 
 import router from './routes/routes.mjs'
 
@@ -29,7 +25,6 @@ nunjucks.configure('views', {
 });
 
 app.use(session({
-    store: new RedisStore({ client: redisClient }),
     secret: 'test',
     resave: 'false',
     saveUninitialized: true,

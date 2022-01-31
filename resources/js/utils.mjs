@@ -30,5 +30,5 @@ export function getLatestNumberFromHash(hash) {
         }
     }
 
-    return latest_number
+    return parseInt(latest_number)
 }
