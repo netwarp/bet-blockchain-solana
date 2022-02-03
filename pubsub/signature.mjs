@@ -2,14 +2,14 @@ import { createClient } from 'redis'
 import * as web3 from '@solana/web3.js'
 import axios from 'axios'
 import {getLatestNumberFromHash} from '../resources/js/utils.mjs'
-
+import {win, loss} from './_utils.mjs'
 
 (async () => {
     const client = createClient();
 
     client.on('error', (err) => console.log('Redis Client Error', err))
 
-    await client.connect()
+
 
     const connection = new web3.Connection(
         web3.clusterApiUrl('devnet')
