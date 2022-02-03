@@ -2,6 +2,9 @@
     import config from '../_store'
     import axios from 'axios'
 
+    import { io } from "socket.io-client";
+    const socket = io();
+
     import * as web3 from '@solana/web3.js'
 
     const connection = new web3.Connection(
@@ -23,25 +26,11 @@
         const {signature}  = await window.solana.signAndSendTransaction(transaction)
         console.log(signature)
 
-        await sendSignatureToServer(window.solana.publicKey.toString(), signature)
-
-        const result = await connection.confirmTransaction(signature)
-
-        console.log(result)
-    }
-
-    async function sendSignatureToServer(address, signature) {
-        const url = '/api/play'
-        const object = {
-            address,
-            signature
-        }
-        const response = await axios.post(url, object)
-        const data = await response.data
-
-        if (data.success) {
-            alert('success')
-        }
+        // Socket
+        socket.emit('play', {
+            address: window.solana.publicKey.toString(),
+            signature,
+        })
     }
 </script>
 

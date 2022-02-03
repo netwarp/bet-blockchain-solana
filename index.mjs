@@ -5,15 +5,27 @@ import toml from 'toml'
 import fs from 'fs'
 import session from 'express-session'
 
-
-
-
 import router from './routes/routes.mjs'
 
 const file = fs.readFileSync('config.toml', 'utf8')
 export const config = toml.parse(file)
 
 const app = express()
+
+import { createServer } from "http";
+import { Server } from "socket.io";
+const httpServer = createServer(app);
+const io = new Server(httpServer, { /* options */ });
+
+
+import * as Events from "./events/Events.mjs";
+
+io.on('connection', (socket) => {
+    console.log('connected')
+
+    socket.on('play', (data) => Events.play(data))
+})
+
 app.use(body_parser.json())
 
 import * as web3 from '@solana/web3.js'
@@ -45,4 +57,4 @@ connection.onAccountChange(new web3.PublicKey(config.solana.wallet), (accountInf
 
 
 
-app.listen(8080)
+httpServer.listen(8080);
