@@ -2,6 +2,7 @@ import Transaction from '../models/Transaction.mjs'
 import { createClient } from 'redis';
 
 const client = createClient();
+await client.connect()
 
 client.on('error', (err) => console.log('Redis Client Error', err));
 
@@ -16,6 +17,7 @@ export async function play(data) {
 
     await transaction.save()
 
+    console.log('sending signature to subscriber')
     await client.publish('signature', signature)
 
     console.log('signature sent to subscriber')

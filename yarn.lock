@@ -1264,6 +1264,26 @@
   "resolved" "https://registry.npmjs.org/@ledgerhq/logs/-/logs-6.10.0.tgz"
   "version" "6.10.0"
 
+"@node-redis/client@^1.0.0", "@node-redis/client@^1.0.0-rc.0":
+  "integrity" "sha512-IXNgOG99PHGL3NxN3/e8J8MuX+H08I+OMNmheGmZBXngE0IntaCQwwrd7NzmiHA+zH3SKHiJ+6k3P7t7XYknMw=="
+  "resolved" "https://registry.npmjs.org/@node-redis/client/-/client-1.0.3.tgz"
+  "version" "1.0.3"
+  dependencies:
+    "cluster-key-slot" "1.1.0"
+    "generic-pool" "3.8.2"
+    "redis-parser" "3.0.0"
+    "yallist" "4.0.0"
+
+"@node-redis/json@^1.0.0-rc.0":
+  "integrity" "sha512-qVRgn8WfG46QQ08CghSbY4VhHFgaTY71WjpwRBGEuqGPfWwfRcIf3OqSpR7Q/45X+v3xd8mvYjywqh0wqJ8T+g=="
+  "resolved" "https://registry.npmjs.org/@node-redis/json/-/json-1.0.2.tgz"
+  "version" "1.0.2"
+
+"@node-redis/search@^1.0.0-rc.0":
+  "integrity" "sha512-gWhEeji+kTAvzZeguUNJdMSZNH2c5dv3Bci8Nn2f7VGuf6IvvwuZDSBOuOlirLVgayVuWzAG7EhwaZWK1VDnWQ=="
+  "resolved" "https://registry.npmjs.org/@node-redis/search/-/search-1.0.2.tgz"
+  "version" "1.0.2"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -2993,6 +3013,11 @@
   dependencies:
     "mimic-response" "^1.0.0"
 
+"cluster-key-slot@1.1.0":
+  "integrity" "sha512-2Nii8p3RwAPiFwsnZvukotvow2rIHM+yQ6ZcBXGHdniadkYGZYiGmkHJIbZPIV9nfv7m/U1IPMVVcAhoWFeklw=="
+  "resolved" "https://registry.npmjs.org/cluster-key-slot/-/cluster-key-slot-1.1.0.tgz"
+  "version" "1.1.0"
+
 "co@^4.6.0":
   "integrity" "sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ="
   "resolved" "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
@@ -3568,11 +3593,6 @@
   "integrity" "sha1-3zrhmayt+31ECqrgsp4icrJOxhk="
   "resolved" "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
   "version" "1.0.0"
-
-"denque@^1.5.0":
-  "integrity" "sha512-XwE+iZ4D6ZUB7mfYRMb5wByE8L74HCn30FBN7sWnXksWc1LO1bPDl67pBR9o/kC4z/xSNAwkMYcGgqDV3BE3Hw=="
-  "resolved" "https://registry.npmjs.org/denque/-/denque-1.5.1.tgz"
-  "version" "1.5.1"
 
 "depd@~1.1.2":
   "integrity" "sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak="
@@ -4289,6 +4309,11 @@
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
   "version" "1.1.1"
+
+"generic-pool@3.8.2":
+  "integrity" "sha512-nGToKy6p3PAbYQ7p1UlWl6vSPwfwU6TMSWK7TTu+WUY4ZjyZQGniGGt2oNVvyNSpyZYSB43zMXVLcBm08MTMkg=="
+  "resolved" "https://registry.npmjs.org/generic-pool/-/generic-pool-3.8.2.tgz"
+  "version" "3.8.2"
 
 "gensync@^1.0.0-beta.2":
   "integrity" "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="
@@ -7276,32 +7301,26 @@
   dependencies:
     "resolve" "^1.9.0"
 
-"redis-commands@^1.7.0":
-  "integrity" "sha512-nJWqw3bTFy21hX/CPKHth6sfhZbdiHP6bTawSgQBlKOVRG7EZkfHbbHwQJnrE4vsQf0CMNE+3gJ4Fmm16vdVlQ=="
-  "resolved" "https://registry.npmjs.org/redis-commands/-/redis-commands-1.7.0.tgz"
-  "version" "1.7.0"
-
-"redis-errors@^1.0.0", "redis-errors@^1.2.0":
+"redis-errors@^1.0.0":
   "integrity" "sha1-62LSrbFeTq9GEMBK/hUpOEJQq60="
   "resolved" "https://registry.npmjs.org/redis-errors/-/redis-errors-1.2.0.tgz"
   "version" "1.2.0"
 
-"redis-parser@^3.0.0":
+"redis-parser@3.0.0":
   "integrity" "sha1-tm2CjNyv5rS4pCin3vTGvKwxyLQ="
   "resolved" "https://registry.npmjs.org/redis-parser/-/redis-parser-3.0.0.tgz"
   "version" "3.0.0"
   dependencies:
     "redis-errors" "^1.0.0"
 
-"redis@v3":
-  "integrity" "sha512-grn5KoZLr/qrRQVwoSkmzdbw6pwF+/rwODtrOr6vuBRiR/f3rjSTGupbF90Zpqm2oenix8Do6RV7pYEkGwlKkw=="
-  "resolved" "https://registry.npmjs.org/redis/-/redis-3.1.2.tgz"
-  "version" "3.1.2"
+"redis@^4.0.0-rc.4":
+  "integrity" "sha512-rcYOxvURG1kNg9t+BIY9PLDQh1JH0ZtJJxCQ8FwWSZXJ6TSWmk1VLXWkgzpNj/NAqN0nGdzjVPB4+1lFvOAO3w=="
+  "resolved" "https://registry.npmjs.org/redis/-/redis-4.0.0-rc.4.tgz"
+  "version" "4.0.0-rc.4"
   dependencies:
-    "denque" "^1.5.0"
-    "redis-commands" "^1.7.0"
-    "redis-errors" "^1.2.0"
-    "redis-parser" "^3.0.0"
+    "@node-redis/client" "^1.0.0-rc.0"
+    "@node-redis/json" "^1.0.0-rc.0"
+    "@node-redis/search" "^1.0.0-rc.0"
 
 "regenerate-unicode-properties@^9.0.0":
   "integrity" "sha512-3E12UeNSPfjrgwjkR81m5J7Aw/T55Tu7nUyZVQYCKEOs+2dkxEY+DpPtZzO4YruuiPb7NkYLVcyJC4+zCbk5pA=="
@@ -8851,7 +8870,7 @@
   "resolved" "https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz"
   "version" "5.0.8"
 
-"yallist@^4.0.0":
+"yallist@^4.0.0", "yallist@4.0.0":
   "integrity" "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A=="
   "resolved" "https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz"
   "version" "4.0.0"

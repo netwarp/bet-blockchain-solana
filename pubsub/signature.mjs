@@ -1,56 +1,46 @@
 import { createClient } from 'redis'
 import * as web3 from '@solana/web3.js'
 import axios from 'axios'
+
+import SolanaAPI from '../core/SolanaAPI.mjs'
 import {getLatestNumberFromHash} from '../resources/js/utils.mjs'
 
+const connection = new web3.Connection(
+    web3.clusterApiUrl('devnet')
+)
 
-(async () => {
-    const client = createClient();
+const client = await createClient();
+await client.connect()
+client.on('error', (err) => console.log('Redis Client Error', err))
 
-    client.on('error', (err) => console.log('Redis Client Error', err))
+await client.subscribe('signature',async (signature) => {
 
-    await client.connect()
+    console.log(`waiting for signature: ${signature}`)
 
-    const connection = new web3.Connection(
-        web3.clusterApiUrl('devnet')
-    )
+    const subscription_id = connection.onSignature(signature, async (signatureResult, context) => {
+        console.log(`signature received`)
+        console.log(signatureResult)
+        console.log(console.log(context))
+        const slot = context.slot
+        // await connection.removeSignatureListener(subscription_id)
 
-    client.subscribe('signature',async (signature) => {
-
-        console.log(`waiting for signature: ${signature}`)
-
-        const subscription_id = connection.onSignature(signature, async (signatureResult, context) => {
-            console.log(`signature received`)
-            console.log(signatureResult)
-            console.log(console.log(context))
-            const slot = context.slot
-            // await connection.removeSignatureListener(subscription_id)
-
-
-            const url = 'https://api.devnet.solana.com'
-            const response = await axios.post(url, {
-                "jsonrpc":"2.0",
-                "id":1,
-                "method":"getTransaction",
-                "params":
-                    [signature]
-            })
-            const data = await response.data
-            const recent_block_hash = data.result.transaction.message.recentBlockhash // TODO put in many lines
-            console.log('recent block hash:')
-            console.log(recent_block_hash)
-
-            console.log(getLatestNumberFromHash(signature))
-            console.log(getLatestNumberFromHash(recent_block_hash))
-
-            if (getLatestNumberFromHash(signature) === getLatestNumberFromHash(recent_block_hash)  ) {
-                console.log('win')
-            }
-            else {
-                console.log('lost')
-            }
+        const solana_api = new SolanaAPI('https://api.devnet.solana.com') // todo .env
+        let data = await solana_api.getTransaction(signature)
 
 
-        })
+        const recent_block_hash = data.result.transaction.message.recentBlockhash // TODO put in many lines
+        console.log('recent block hash:')
+        console.log(recent_block_hash)
+
+        console.log(getLatestNumberFromHash(signature))
+        console.log(getLatestNumberFromHash(recent_block_hash))
+
+        if (getLatestNumberFromHash(signature) === getLatestNumberFromHash(recent_block_hash)  ) {
+            console.log('win')
+        }
+        else {
+            console.log('lost')
+        }
     })
-})();
+})
+
