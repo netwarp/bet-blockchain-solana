@@ -13,6 +13,7 @@
     "@solana/wallet-adapter-react-ui": "^0.7.0",
     "@solana/wallet-adapter-wallets": "^0.13.0",
     "@solana/web3.js": "^1.31.0",
+    "bip39": "^3.0.4",
     "connect-redis": "^6.0.0",
     "daisyui": "^1.20.0",
     "express": "^4.17.2",
