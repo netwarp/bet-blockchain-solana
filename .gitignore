@@ -4,3 +4,4 @@ config.json
 .idea
 yarn-error.log
 public/js/app.js
+tests.mjs

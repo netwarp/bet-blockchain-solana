@@ -17,8 +17,7 @@ import { Server } from "socket.io";
 const httpServer = createServer(app);
 const io = new Server(httpServer, { /* options */ });
 
-
-import * as Events from "./events/Events.mjs";
+import * as Events from "./events/Events.mjs"
 
 io.on('connection', (socket) => {
     console.log('connected')
@@ -28,13 +27,11 @@ io.on('connection', (socket) => {
 
 app.use(body_parser.json())
 
-import * as web3 from '@solana/web3.js'
-
 nunjucks.configure('views', {
     autoescape: true,
     express: app,
     watch: true
-});
+})
 
 app.use(session({
     secret: 'test',
@@ -42,19 +39,11 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: true }
 }))
+
 app.use(express.static('public'))
 app.use(router)
 app.get('*', (request, response) => response.redirect('/'))
 
-const connection = new web3.Connection(
-    web3.clusterApiUrl('devnet')
-)
+httpServer.listen(8080)
 
-connection.onAccountChange(new web3.PublicKey(config.solana.wallet), (accountInfo, context) => {
-    console.log(accountInfo)
-    console.log(context)
-})
-
-
-
-httpServer.listen(8080);
+export default io

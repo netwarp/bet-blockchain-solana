@@ -1,9 +1,11 @@
 import { createClient } from 'redis'
 import * as web3 from '@solana/web3.js'
 import axios from 'axios'
+import {won, lost} from './_utils.mjs'
 
 import SolanaAPI from '../core/SolanaAPI.mjs'
 import {getLatestNumberFromHash} from '../resources/js/utils.mjs'
+
 
 const connection = new web3.Connection(
     web3.clusterApiUrl('devnet')
@@ -12,6 +14,19 @@ const connection = new web3.Connection(
 const client = await createClient();
 await client.connect()
 client.on('error', (err) => console.log('Redis Client Error', err))
+
+
+import { createServer } from "http";
+import { Server } from "socket.io";
+
+const httpServer = createServer();
+const io = new Server(httpServer, {
+    cors: {
+        origin: "http://localhost:8080"
+    }
+});
+
+io.sockets.emit('lost', "eee")
 
 await client.subscribe('signature',async (signature) => {
 
@@ -36,11 +51,13 @@ await client.subscribe('signature',async (signature) => {
         console.log(getLatestNumberFromHash(recent_block_hash))
 
         if (getLatestNumberFromHash(signature) === getLatestNumberFromHash(recent_block_hash)  ) {
-            console.log('win')
+            await won(signature)
         }
         else {
-            console.log('lost')
+            console.log('LOST')
+            await lost(signature)
         }
     })
 })
+
 

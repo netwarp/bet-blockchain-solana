@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@socket.io/redis-adapter": "^7.1.0",
+    "@socket.io/redis-emitter": "^4.1.1",
     "@solana/wallet-adapter-base": "^0.8.1",
     "@solana/wallet-adapter-react": "^0.14.1",
     "@solana/wallet-adapter-react-ui": "^0.7.0",

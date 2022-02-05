@@ -32,6 +32,8 @@
             signature,
         })
     }
+
+    socket.on('response', (data) => console.log(data))
 </script>
 
 <div id="view-play">
