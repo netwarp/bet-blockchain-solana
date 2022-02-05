@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 body {
+    /*
     @apply
     bg-gray-800
 
+     */
+    background: #1FBBF4;
+
+    background: linear-gradient(to bottom, #1FBBF4, #E11FAE);
 }
 
 header {
@@ -87,7 +92,7 @@ main {
 .app .view {
     @apply
     m-4
-    bg-gray-700
+
     p-4
 }
 
@@ -101,11 +106,64 @@ main {
 .app button {
     @apply
     px-24
-    py-2
+    py-4
     text-5xl
-    rounded-lg
+    rounded-xl
     bg-purple-700
     hover:bg-purple-600
+    border-4
+}
+
+/* box */
+.box-result {
+    @apply
+
+    bg-slate-800
+    rounded-xl
+    border-4
+}
+
+.box-result-header {
+    @apply
+    p-4
+    text-center
+    text-2xl
+    font-bold
+}
+
+.box-result-lines {
+
+}
+
+.box-result-line {
+    @apply
+    flex
+    items-center
+    divide-y-2
+}
+
+.box-result-lite-status {
+    @apply
+    p-4
+
+}
+
+.box-result-lite-status img {
+    width: 30px;
+}
+
+
+@keyframes loader{
+    to{ transform: rotate(360deg); }
+}
+
+.box-result-lite-status img.loader {
+    animation: loader 3s linear infinite;
+}
+
+.box-result-lite-signature {
+    @apply
+    p-4
 }
 
 footer {
