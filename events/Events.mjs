@@ -1,14 +1,12 @@
-import Transaction from '../models/Transaction.mjs'
-
-import io from '../index.mjs'
 import * as web3 from '@solana/web3.js'
+import Transaction from '../models/Transaction.mjs'
+import io from '../index.mjs'
 import SolanaAPI from '../core/SolanaAPI.mjs'
 
 import {getLatestNumberFromHash} from '../resources/js/utils.mjs'
-//import {lost, won} from "../pubsub/_utils.mjs";
 
 const connection = new web3.Connection(
-    web3.clusterApiUrl('devnet')
+    web3.clusterApiUrl('devnet') // TODO .env
 )
 
 
@@ -22,8 +20,6 @@ export async function play(data) {
     })
 
     await transaction.save()
-
-
 
     const subscription_id = connection.onSignature(signature, async (signatureResult, context) => {
         console.log(`signature received`)
@@ -55,12 +51,4 @@ export async function play(data) {
             })
         }
     })
-
-  //  await client.publish('signature', signature)
-
-
-}
-
-export async function toto() {
-    return 'e'
 }

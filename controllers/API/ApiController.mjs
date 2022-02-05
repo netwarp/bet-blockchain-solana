@@ -5,9 +5,8 @@ export async function index(request, response) {
     response.json('API v1')
 }
 
+// TODO remove
 export async function response(request, response) {
-    console.log(request.body)
-    io.emit('hello')
     response.sendStatus(200)
 }
 
