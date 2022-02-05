@@ -40,14 +40,14 @@ export async function play(data) {
             console.log('WON')
             io.emit('response', {
                 signature,
-                status: 'WON'
+                status: 'won'
             })
         }
         else {
             console.log('LOST')
             io.emit('response', {
                 signature,
-                status: 'LOST'
+                status: 'lost'
             })
         }
     })
