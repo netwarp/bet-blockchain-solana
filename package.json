@@ -8,6 +8,7 @@
     "migrate": "node database/migrations/run.mjs"
   },
   "dependencies": {
+    "@socket.io/redis-adapter": "^7.1.0",
     "@solana/wallet-adapter-base": "^0.8.1",
     "@solana/wallet-adapter-react": "^0.14.1",
     "@solana/wallet-adapter-react-ui": "^0.7.0",
@@ -18,11 +19,9 @@
     "daisyui": "^1.20.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
-    "laravel-mix-react-typescript-extension": "^1.0.3",
     "nunjucks": "^3.2.3",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "react": "^17.0.2",
     "redis": "^4.0.0-rc.4",
     "sequelize": "^6.13.0",
     "socket.io": "^4.4.1",
@@ -31,7 +30,6 @@
     "toml": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.16.5",
     "jest": "^27.4.5",
     "laravel-mix": "^6.0.39",
     "laravel-mix-svelte": "^0.5.0",
