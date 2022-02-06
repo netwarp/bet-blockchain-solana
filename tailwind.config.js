@@ -950,6 +950,6 @@ module.exports = {
     'disabled',
   ],
   plugins: [
-    require('daisyui'),
+
   ],
 }
