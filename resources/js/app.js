@@ -1,3 +1,9 @@
+import App from './app/App.svelte'
+
+export const app = new App({
+    target: document.querySelector('#app')
+})
+/*
 import Connector from './connector/Connector'
 import App from './app/App'
 
@@ -8,6 +14,8 @@ export const connector = new Connector({
 export const app = new App({
     target: document.querySelector('#app')
 })
+
+ */
 
 /*
 import * as web3 from '@solana/web3.js'

@@ -468,6 +468,40 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -562,8 +596,8 @@ header .container {
   margin-right: auto;
   display: flex;
   align-items: center;
-  padding-left: 12rem;
-  padding-right: 12rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 header nav {
@@ -626,7 +660,6 @@ header .menu {
 
 main {
   min-height: 100vh;
-  padding: 1rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -672,115 +705,117 @@ main {
   line-height: 2rem;
 }
 
-.app {
+#app {
 }
 
-.app .nav {
+#app .container {
   display: flex;
+  min-height: 100vh;
 }
 
-.app .nav .link {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  flex: 1 1 0%;
+#app .sidebar {
+  width: 25%;
+  cursor: pointer;
   --tw-bg-opacity: 1;
-  background-color: rgb(19 78 74 / var(--tw-bg-opacity));
-  padding: 0.5rem;
-  text-align: center;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  padding: 0.25rem;
 }
 
-.app .nav .link.active {
+#app .sidebar .connect-wallet {
   --tw-bg-opacity: 1;
-  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
-}
-
-.app .view {
-  margin: 1rem;
-  padding: 1rem;
-}
-
-.app #view-play {
-  display: flex;
-  justify-content: center;
-}
-
-.app button {
-  border-radius: 0.75rem;
-  border-width: 4px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
-  padding-left: 6rem;
-  padding-right: 6rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.app button:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 51 234 / var(--tw-bg-opacity));
-}
-
-/* box */
-
-.box-result {
-  border-radius: 0.75rem;
-  border-width: 4px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-
-.box-result-header {
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
   padding: 1rem;
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
+}
+
+#app .sidebar .connect-wallet:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+#app .sidebar .sidebar-item {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 78 74 / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#app .sidebar .sidebar-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 118 110 / var(--tw-bg-opacity));
+}
+
+/*
+.app button {
+    @apply
+    px-24
+    py-4
+    text-5xl
+    rounded-xl
+    bg-purple-700
+    hover:bg-purple-600
+    border-4
+}
+
+.box-result {
+    @apply
+
+    bg-slate-800
+    rounded-xl
+    border-4
+}
+
+.box-result-header {
+    @apply
+    p-4
+    text-center
+    text-2xl
+    font-bold
 }
 
 .box-result-lines {
+
 }
 
 .box-result-line {
-  display: flex;
-  align-items: center;
-}
-
-.box-result-line > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
+    @apply
+    flex
+    items-center
+    divide-y-2
 }
 
 .box-result-lite-status {
-  padding: 1rem;
+    @apply
+    p-4
+
 }
 
 .box-result-lite-status img {
-  width: 30px;
+    width: 30px;
 }
 
-@-webkit-keyframes loader{
-  to{
-    transform: rotate(360deg);
-  }
-}
 
 @keyframes loader{
-  to{
-    transform: rotate(360deg);
-  }
+    to{ transform: rotate(360deg); }
 }
 
 .box-result-lite-status img.loader {
-  -webkit-animation: loader 3s linear infinite;
-          animation: loader 3s linear infinite;
+    animation: loader 3s linear infinite;
 }
 
 .box-result-lite-signature {
-  padding: 1rem;
+    @apply
+    p-4
 }
+
+
+
+*/
 
 footer {
   --tw-bg-opacity: 1;
@@ -816,5 +851,3 @@ footer {
     margin-top: 0px;
   }
 }
-
-

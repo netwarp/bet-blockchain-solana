@@ -10,6 +10,6 @@ export async function stats(request, response) {
     response.render('stats.html')
 }
 
-export async function play(request, reponse) {
-    response.response('play.html')
+export async function play(request, response) {
+    response.render('play.html')
 }

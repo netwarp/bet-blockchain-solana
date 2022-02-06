@@ -23,7 +23,7 @@ header {
 header .container {
     @apply
     mx-auto
-    px-48
+    px-32
     flex
     items-center
 
@@ -87,7 +87,7 @@ header .menu {
 
 main {
     @apply
-    p-4
+
     min-h-screen
     text-white
 }
@@ -129,43 +129,43 @@ main {
     rounded-md
 }
 
-.app {
+#app {
 
 }
 
-.app .nav {
+#app .container {
     @apply
     flex
+    min-h-screen
 }
 
-.app .nav .link {
+#app .sidebar {
     @apply
-    flex-1
-    bg-teal-900
-    text-center
-    mx-4
-    p-2
+    bg-gray-500
+    w-1/4
+    p-1
+    cursor-pointer
 }
 
-.app .nav .link.active {
+#app .sidebar .connect-wallet {
     @apply
-    bg-teal-600
-}
-
-.app .view {
-    @apply
-    m-4
-
     p-4
+    text-2xl
+    text-center
+    bg-gray-900
+    hover:bg-gray-800
 }
 
-.app #view-play {
+#app .sidebar .sidebar-item {
     @apply
-    flex
-    justify-center
-
+    p-2
+    text-xl
+    my-2
+    bg-teal-900
+    hover:bg-teal-700
 }
 
+/*
 .app button {
     @apply
     px-24
@@ -177,7 +177,6 @@ main {
     border-4
 }
 
-/* box */
 .box-result {
     @apply
 
@@ -229,11 +228,13 @@ main {
     p-4
 }
 
+
+
+*/
+
 footer {
     @apply
     p-4
     bg-gray-900
     text-white
 }
-
-
