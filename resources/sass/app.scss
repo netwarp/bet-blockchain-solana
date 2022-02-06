@@ -15,7 +15,7 @@ body {
 
 header {
     @apply
-    bg-gray-900
+    bg-slate-800
     p-4
     text-white
 }
@@ -23,12 +23,17 @@ header {
 header .container {
     @apply
     mx-auto
-    px-4
+    px-48
+    flex
+    items-center
+
 }
 
 header nav {
     @apply
     flex
+    w-full
+    items-center
 }
 
 header .logo {
@@ -40,6 +45,7 @@ header .logo {
 header .menu {
     @apply
     flex
+    items-center
 }
 
 .menu {
@@ -59,11 +65,68 @@ header .menu {
     text-white
 }
 
+#wallet-connector {
+
+}
+
+#wallet-connect-button {
+    @apply
+    px-8
+    py-4
+    text-xl
+    rounded-xl
+    bg-purple-700
+    hover:bg-purple-600
+    border-4
+}
+
+#wallet-menu-connected {
+
+}
+
+
 main {
     @apply
     p-4
     min-h-screen
     text-white
+}
+
+.container#page-landing {
+    @apply
+    px-48
+    text-center
+}
+
+#page-landing h1 {
+    @apply
+    text-5xl
+    mt-24
+    mb-12
+    font-bold
+    px-48
+}
+
+#page-landing p {
+    @apply
+    px-48
+}
+
+#page-landing .buttons {
+    @apply
+    mt-16
+    flex
+    justify-center
+}
+
+#page-landing .buttons a {
+    @apply
+    text-2xl
+    mx-6
+    bg-red-400
+    px-24
+    py-6
+    rounded-md
 }
 
 .app {

@@ -551,7 +551,7 @@ body {
 
 header {
   --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
   padding: 1rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -560,12 +560,16 @@ header {
 header .container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  padding-left: 12rem;
+  padding-right: 12rem;
 }
 
 header nav {
   display: flex;
+  width: 100%;
+  align-items: center;
 }
 
 header .logo {
@@ -576,6 +580,7 @@ header .logo {
 
 header .menu {
   display: flex;
+  align-items: center;
 }
 
 .menu {
@@ -595,11 +600,76 @@ header .menu {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#wallet-connector {
+}
+
+#wallet-connect-button {
+  border-radius: 0.75rem;
+  border-width: 4px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#wallet-connect-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 51 234 / var(--tw-bg-opacity));
+}
+
+#wallet-menu-connected {
+}
+
 main {
   min-height: 100vh;
   padding: 1rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.container#page-landing {
+  padding-left: 12rem;
+  padding-right: 12rem;
+  text-align: center;
+}
+
+#page-landing h1 {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  padding-left: 12rem;
+  padding-right: 12rem;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#page-landing p {
+  padding-left: 12rem;
+  padding-right: 12rem;
+}
+
+#page-landing .buttons {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+#page-landing .buttons a {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .app {
