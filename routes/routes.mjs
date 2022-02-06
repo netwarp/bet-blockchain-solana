@@ -1,18 +1,13 @@
 import {Router} from "express";
-import AppController from '../controllers/AppController.mjs'
+import * as AppController from '../controllers/AppController.mjs'
 const router = Router()
 import api from './api.mjs'
 
-router.get('/', (request, response) => {
-    const data = {
-        wallet: request.session.wallet
-    }
-    response.render('index.html', data)
-})
+router.get('/', AppController.index)
 
-router.get('/app', AppController.index)
+router.get('/rules', AppController.rules)
 
-router.get('/rules', (request, response) => response.render('rules.html'))
+router.get('/play', AppController.play)
 
 router.use('/api', api)
 
