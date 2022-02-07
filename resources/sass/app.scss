@@ -152,8 +152,14 @@ main {
     p-4
     text-2xl
     text-center
+        /*4e44ce*/
     bg-gray-900
     hover:bg-gray-800
+}
+
+#app .sidebar .connect-wallet.key {
+    @apply
+    text-sm
 }
 
 #app .sidebar .sidebar-item {

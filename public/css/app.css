@@ -735,6 +735,11 @@ main {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+#app .sidebar .connect-wallet.key {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 #app .sidebar .sidebar-item {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
