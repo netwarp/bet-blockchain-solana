@@ -171,8 +171,37 @@ main {
     hover:bg-teal-700
 }
 
-/*
-.app button {
+#app .main {
+    @apply
+    w-full
+}
+
+#app .error-wallet-not-connected {
+    @apply
+    bg-orange-400
+    p-5
+    w-5/12
+    mx-auto
+    text-center
+    mt-32
+}
+
+#app .app-page {
+
+}
+
+#app .app-page .container-play {
+    @apply
+    flex
+
+}
+
+#app .app-page .container-play .side-play {
+    @apply
+    p-10
+}
+
+#app .app-page .container-play .side-play .button-play {
     @apply
     px-24
     py-4
@@ -183,15 +212,20 @@ main {
     border-4
 }
 
-.box-result {
+#app .app-page .container-play .side-result {
     @apply
+    p-10
+    w-full
+}
 
+#app .app-page .container-play .side-result .box-result {
+    @apply
     bg-slate-800
     rounded-xl
     border-4
 }
 
-.box-result-header {
+#app .app-page .container-play .side-result .box-result .box-result-header {
     @apply
     p-4
     text-center
@@ -199,27 +233,27 @@ main {
     font-bold
 }
 
-.box-result-lines {
-
-}
-
-.box-result-line {
+#app .app-page .container-play .side-result .box-result .box-result-line {
     @apply
     flex
     items-center
     divide-y-2
 }
 
-.box-result-lite-status {
+#app .app-page .container-play .side-result .box-result .box-result-lite-status {
     @apply
     p-4
-
+}
+#app .app-page .container-play .side-result .box-result .box-result-line-signature {
+    @apply
+    p-4
+    flex-1
 }
 
-.box-result-lite-status img {
+
+#app .app-page .container-play .side-result .box-result .box-result-lite-status img {
     width: 30px;
 }
-
 
 @keyframes loader{
     to{ transform: rotate(360deg); }
@@ -229,14 +263,6 @@ main {
     animation: loader 3s linear infinite;
 }
 
-.box-result-lite-signature {
-    @apply
-    p-4
-}
-
-
-
-*/
 
 footer {
     @apply

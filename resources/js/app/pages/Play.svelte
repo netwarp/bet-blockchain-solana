@@ -1,14 +1,13 @@
 <script>
+    import {is_connected, public_key} from '../_store'
     import config from '../_store'
-    import axios from 'axios'
 
     let plays = []
 
-    import { io } from "socket.io-client";
-    const socket = io();
+    import { io } from "socket.io-client"
+    const socket = io()
 
     import * as web3 from '@solana/web3.js'
-
     const connection = new web3.Connection(
         web3.clusterApiUrl(config.solana.network)
     )
@@ -23,7 +22,6 @@
         )
         transaction.recentBlockhash =  (await connection.getRecentBlockhash()).blockhash
         transaction.feePayer = window.solana.publicKey
-
 
         const {signature}  = await window.solana.signAndSendTransaction(transaction)
         console.log(signature)
@@ -57,33 +55,43 @@
     })
 </script>
 
-<div id="view-play">
-
-    <button type="button" on:click={play}>Play</button>
-
-    <div class="box-result">
-        <div class="box-result-header">
-            Results:
+<div class="app-page">
+    {#if $is_connected === false}
+        <div class="error-wallet-not-connected">
+            Connect your wallet to play
         </div>
-        <div class="box-result-lines">
-            {#each plays as play}
-                <div class="box-result-line">
-                    <div class="box-result-lite-status">
-                        {#if play.status === 'loading'}
-                            <img src="/images/icon-load.svg" alt="" class="loader">
-                        {:else if play.status === 'won' }
-                            <img src="/images/icon-won.svg" alt="">
-                        {:else if play.status === 'lost' }
-                            <img src="/images/icon-lost.svg" alt="">
-                        {/if}
+    {:else }
+        <div class="container-play">
+            <div class="side-play">
+                <button class="button-play" on:click={play}>Play</button>
+            </div>
+            <div class="side-result">
+                <div class="box-result">
+                    <div class="box-result-header">
+                        Results:
                     </div>
-                    <div class="box-result-lite-signature">
-                        <a href="https://explorer.solana.com/tx/{play.signature}?cluster=devnet" target="_blank">
-                            {play.signature}
-                        </a>
+                    <div class="box-result-lines">
+                        {#each plays as play}
+                            <div class="box-result-line">
+                                <div class="box-result-lite-status">
+                                    {#if play.status === 'loading'}
+                                        <img src="/images/icon-load.svg" alt="" class="loader">
+                                    {:else if play.status === 'won' }
+                                        <img src="/images/icon-won.svg" alt="">
+                                    {:else if play.status === 'lost' }
+                                        <img src="/images/icon-lost.svg" alt="">
+                                    {/if}
+                                </div>
+                                <div class="box-result-lite-signature">
+                                    <a href="https://explorer.solana.com/tx/{play.signature}?cluster=devnet" target="_blank">
+                                        {play.signature}
+                                    </a>
+                                </div>
+                            </div>
+                        {/each}
                     </div>
                 </div>
-            {/each}
+            </div>
         </div>
-    </div>
+    {/if}
 </div>
