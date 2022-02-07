@@ -1,37 +1,63 @@
 <script>
     import {onMount} from 'svelte'
     import axios from 'axios'
-
-    const address = window.solana.publicKey.toString()
+    import {is_connected, public_key} from '../_store'
 
     let transactions = []
+    let pages = 1
 
     onMount(async () => {
+        if ( ! $is_connected) {
+            return
+        }
+
         const url = '/api/history'
         const response = await axios.post(url, {
-            address
+            address: $public_key
         })
         const data = response.data
-        transactions = data
+        console.log(data)
+
+        transactions = data.transactions.rows
+        pages = data.pages
     })
 
-
+    async function loadHistoryPage(number) {
+        console.log(number)
+    }
 </script>
 
-<div id="view-history">
+<div class="app-page">
     <h1>History:</h1>
-    <table>
-        <thead>
+
+    {#if $is_connected === false}
+        <div class="error-wallet-not-connected">
+            Connect your wallet to play
+        </div>
+    {:else }
+        <table>
+            <thead>
             <tr>
+                <th>Status</th>
                 <th>Signature</th>
             </tr>
-        </thead>
-        <tbody>
-        {#each transactions as transaction}
-            <tr>
-                <td>{transaction.signature}</td>
-            </tr>
-        {/each}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {#each transactions as transaction}
+                    <tr>
+                        <td>{transaction.status}</td>
+                        <td>{transaction.signature}</td>
+                    </tr>
+                {/each}
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            {#each Array(pages) as _, i}
+                <!--
+                <button class="link" on:click={loadHistoryPage(333) }>{i + 1}</button>
+                 -->
+            {/each}
+        </div>
+    {/if}
 </div>

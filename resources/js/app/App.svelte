@@ -1,7 +1,8 @@
 <script>
     import {view, is_connected, public_key} from './_store'
 
-    import Play from './pages/Play.svelte'
+    import Play from './pages/Play'
+    import History from './pages/History'
 
    // let is_connected = false
     //let public_key = ''
@@ -50,7 +51,7 @@
         {:else if $view === 'rewards'}
             Rewards
         {:else if $view === 'history'}
-            History
+            <History />
         {/if}
     </div>
 </div>
