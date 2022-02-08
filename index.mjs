@@ -1,14 +1,10 @@
 import express from 'express'
 import body_parser from 'body-parser'
 import nunjucks from 'nunjucks'
-import toml from 'toml'
-import fs from 'fs'
+
 import session from 'express-session'
 
 import router from './routes/routes.mjs'
-
-const file = fs.readFileSync('config.toml', 'utf8')
-export const config = toml.parse(file)
 
 const app = express()
 
