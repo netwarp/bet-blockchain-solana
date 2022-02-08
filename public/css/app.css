@@ -754,6 +754,7 @@ main {
 }
 
 #app .app-page .container-play .side-result .box-result {
+  word-break: break-all;
   border-radius: 0.75rem;
   border-width: 4px;
   --tw-bg-opacity: 1;
