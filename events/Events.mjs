@@ -38,6 +38,12 @@ export async function play(data) {
 
         if (getLatestNumberFromHash(signature) === getLatestNumberFromHash(recent_block_hash)  ) {
             console.log('WON')
+            await Transaction.update(
+                {status: 'won'},
+                {where: {
+                    signature
+                }}
+            )
             io.emit('response', {
                 signature,
                 status: 'won'
@@ -45,6 +51,12 @@ export async function play(data) {
         }
         else {
             console.log('LOST')
+            await Transaction.update(
+                {status: 'lost'},
+                {where: {
+                    signature
+                }}
+            )
             io.emit('response', {
                 signature,
                 status: 'lost'
