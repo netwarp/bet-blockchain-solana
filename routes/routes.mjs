@@ -5,9 +5,14 @@ import api from './api.mjs'
 
 router.get('/', AppController.index)
 
+router.get('/play', AppController.play)
+
 router.get('/rules', AppController.rules)
 
-router.get('/play', AppController.play)
+router.get('/stats', AppController.stats)
+
+
+
 
 router.use('/api', api)
 

@@ -129,6 +129,19 @@ main {
     rounded-md
 }
 
+.container.page {
+    @apply
+    mx-auto
+    mt-8
+    px-48
+}
+
+.container.page h1 {
+    @apply
+    text-3xl
+    mb-4
+}
+
 #app {
 
 }
