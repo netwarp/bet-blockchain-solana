@@ -16,7 +16,7 @@ console.log(keypair.publicKey.toString())
 
 import SolanaAPI from '../core/SolanaAPI.mjs'
 import { createClient } from 'redis'
-import {sendAndConfirmTransaction} from "@solana/web3.js";
+import {sendAndConfirmTransaction} from '@solana/web3.js'
 
 const client = createClient()
 client.on('error', (err) => console.log('Redis Client Error', err))
