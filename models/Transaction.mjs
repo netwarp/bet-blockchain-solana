@@ -1,13 +1,6 @@
 import Sequelize from 'sequelize'
-import toml from 'toml'
-import fs from 'fs'
-const file = fs.readFileSync('config.toml', 'utf8')
-const config = toml.parse(file)
+import sequelize from '../services/sequelize.mjs'
 
-const sequelize = new Sequelize(config.database.name, config.database.username, config.database.password, {
-    host: 'localhost',
-    dialect: 'postgres'
-})
 
 class Transaction extends Sequelize.Model {}
 
