@@ -1,16 +1,5 @@
-import {config} from '../../index.mjs'
-
-import {Sequelize} from 'sequelize'
 import fs from 'fs'
-import util from "util";
-const readFile = util.promisify(fs.readFile);
-import path  from 'path';
-const __dirname = path.resolve();
-
-const sequelize = new Sequelize(config.database.name, config.database.username, config.database.password, {
-    host: 'localhost',
-    dialect: 'postgres'
-})
+import sequelize from '../../services/sequelize.mjs'
 
 async function tryConnect() {
     try {
@@ -20,16 +9,13 @@ async function tryConnect() {
         console.error('Unable to connect to the database:', error);
     }
 }
+// await tryConnect()
 
-async function getMigrations() {
-    let sql = await readFile(__dirname + '/database/migrations/main.sql', 'utf-8')
-    return sql
+async function migrate() {
+    let sql = fs.readFileSync(new URL('./main.sql', import.meta.url), 'utf8')
+    sequelize.query(sql, {raw: true})
 }
-await getMigrations().then(data => {
-    console.log(data)
-    sequelize.query(data, {raw: true})
-})
 
-
+await migrate()
 
 process.exit()
