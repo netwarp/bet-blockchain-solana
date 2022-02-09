@@ -3,6 +3,11 @@ import Transaction from '../models/Transaction.mjs'
 import io from '../index.mjs'
 import SolanaAPI from '../core/SolanaAPI.mjs'
 
+import { createClient } from 'redis'
+const client = createClient()
+client.on('error', (err) => console.log('Redis Client Error', err))
+await client.connect()
+
 import {getLatestNumberFromHash} from '../resources/js/utils.mjs'
 
 const connection = new web3.Connection(
@@ -29,7 +34,9 @@ export async function play(data) {
         const solana_api = new SolanaAPI('https://api.devnet.solana.com') // todo .env
         let data = await solana_api.getTransaction(signature)
 
-        const recent_block_hash = data.result.transaction.message.recentBlockhash // TODO put in many lines
+        let recent_block_hash = data.result.transaction.message.recentBlockhash // TODO put in many lines
+
+
         console.log('recent block hash:')
         console.log(recent_block_hash)
 
@@ -48,6 +55,9 @@ export async function play(data) {
                 signature,
                 status: 'won'
             })
+
+            const reward_address = data.result.transaction.message.accountKeys[0]
+            await client.publish('rewards', reward_address)
         }
         else {
             console.log('LOST')
