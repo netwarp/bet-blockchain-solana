@@ -32,3 +32,7 @@ export function getLatestNumberFromHash(hash) {
 
     return parseInt(latest_number)
 }
+
+// utils front
+
+
