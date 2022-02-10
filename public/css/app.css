@@ -908,6 +908,12 @@ footer {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
   padding: 1rem;
+  text-align: center;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+footer a {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
