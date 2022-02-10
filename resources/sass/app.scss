@@ -62,7 +62,9 @@ header .menu {
     @apply
     text-xl
     p-2
-    text-white
+    font-bold
+    text-blue-300
+    hover:text-fuchsia-500
 }
 
 #wallet-connector {
@@ -123,10 +125,23 @@ main {
     @apply
     text-2xl
     mx-6
-    bg-red-400
+
     px-24
     py-6
     rounded-md
+}
+
+#page-landing .buttons a:first-of-type {
+    @apply
+    bg-blue-500
+    hover:bg-blue-400
+
+}
+
+#page-landing .buttons a:last-of-type {
+    @apply
+    bg-fuchsia-600
+    hover:bg-fuchsia-500
 }
 
 .container.page {
