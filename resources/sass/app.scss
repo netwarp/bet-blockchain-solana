@@ -156,6 +156,24 @@ main {
     text-3xl
     mb-4
 }
+/* Rules */
+
+.container.page a {
+    @apply
+    text-fuchsia-900
+}
+
+.container.page pre {
+    @apply
+    bg-gray-900
+    p-4
+    my-4
+}
+
+.container.page pre b {
+    @apply
+    bg-red-900
+}
 
 #app {
 

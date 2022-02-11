@@ -3,6 +3,44 @@
 {% block content %}
 <div class="container page">
     <h1>Rules</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, culpa dicta distinctio et harum incidunt ipsum laborum nemo quis, quo sed similique tempore vitae. Amet assumenda consectetur dignissimos eveniet reiciendis.</p>
+    <p>
+        It's a mini-game on the Solana's blockchain. <br>
+        The only network available for now is devnet. <br>
+        The users send a mini-amount to the kitty (0.001 Sol)<br>
+        A signature transaction is sent to the network. <br>
+        The transaction is registered in a block. <br>
+        If the latest signature's number is equal to the latest recent blockhash's number, the user win the kitty. <br>
+        For example, <a href="https://explorer.solana.com/tx/5pxGXqCDEcDTVTiNuKcD2eccZs2uvG1TWovsJgVwqU7dBRUDqpnCGx5XWpyGpFeDjDXvT4FBMPUwWEpemniTUGYu?cluster=devnet" target="_blank">let's see this transaction in a explorer</a>:
+    </p>
+
+<pre>
+Signature: 5pxGXqCDEcDTVTiNuKcD2eccZs2uvG1TWovsJgVwqU7dBRUDqpnCGx5XWpyGpFeDjDXvT<b>4</b>FBMPUwWEpemniTUGYu
+Recent Blockhash: mYokMMXQcRyqe234KRAwTYSn3t69M8BzznAn59y19<b>4</b>p
+</pre>
+
+    <p>
+        The latest signature's number is equal to the latest recent blockchash's number. <br>
+        The user win 90% of the kitty. <br>
+        <a href="https://explorer.solana.com/tx/5i5hojuXvyXnCTbMxAgxGvH9ezMkvEqgJ1bfSMkCAxFnkVhbqiWXMPFBk7JwLmvBcx8ZtB8AnWjsEvQvAySvRGk3?cluster=devnet" target="_blank">Look at this one:</a>
+    </p>
+
+<pre>
+Signature: 5i5hojuXvyXnCTbMxAgxGvH9ezMkvEqgJ1bfSMkCAxFnkVhbqiWXMPFBk7JwLmvBcx8ZtB8AnWjsEvQvAySvRGk<b>3</b>
+Recent Blockhash: im1jmK1KPiBpM52QMa2qxmGxXpZUdSHyXrmUn<b>3</b>eRiQW
+</pre>
+
+    <p>
+        <a href="https://explorer.solana.com/tx/u3u6BBCb6FvJY6CyAixcBxQhCBQcd8HQzcLWUM7gzj21M4uwYBU18xyouvaQT4S2k9F5WWFqLTMYAYxn2qXgPhe?cluster=devnet" target="_blank">Or this one:</a>
+    </p>
+
+<pre>
+Signature: u3u6BBCb6FvJY6CyAixcBxQhCBQcd8HQzcLWUM7gzj21M4uwYBU18xyouvaQT4S2k9F5WWFqLTMYAYxn<b>2</b>qXgPhe
+Recent Blockhash: AFXzdkFbAFSt9VKSVCZXVYt7Hdp5vszxCpF3ZnyiwX<b>2</b>r
+</pre>
+
+    <p>
+        Now you know the rules. <br>
+        Enjoy
+    </p>
 </div>
 {% endblock %}
