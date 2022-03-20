@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node .\\node_modules\\mocha\\bin\\mocha",
     "migrate": "node database/migrations/run.mjs",
-    "dev:css": "npx tailwind -i resources/sass/app.scss -o public/css/app.css -w",
+    "dev:css": "npx postcss .\\resources\\sass\\app.scss -o .\\public\\css\\app.css -w",
     "dev:js": "npx mix watch"
   },
   "dependencies": {
@@ -20,22 +20,25 @@
     "nunjucks": "^3.2.3",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
+    "postcss-cli": "^9.1.0",
     "redis": "^4.0.3",
     "sequelize": "^6.13.0",
     "socket.io": "^4.4.1",
     "socket.io-client": "^4.4.1",
-    "tailwindcss": "^3.0.7",
     "toml": "^3.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.4",
     "jest": "^27.4.5",
     "laravel-mix": "^6.0.39",
     "laravel-mix-svelte": "^0.5.0",
     "mocha": "^9.1.3",
     "nodemon": "^2.0.15",
+    "postcss": "^8.4.12",
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^10.1.3",
     "svelte": "^3.44.3",
-    "svelte-loader": "^3.1.2"
+    "svelte-loader": "^3.1.2",
+    "tailwindcss": "^3.0.23"
   }
 }

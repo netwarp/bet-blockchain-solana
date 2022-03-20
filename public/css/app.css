@@ -1,8 +1,6 @@
 /*
-! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
-*/
-
-/*
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
+*//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -10,14 +8,10 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: #e5e7eb;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
 }
 
 ::before,
@@ -33,17 +27,12 @@
 */
 
 html {
-  line-height: 1.5;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* 4 */
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
 }
 
 /*
@@ -52,10 +41,8 @@ html {
 */
 
 body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
 }
 
 /*
@@ -65,12 +52,9 @@ body {
 */
 
 hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  border-top-width: 1px;
-  /* 3 */
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
 }
 
 /*
@@ -123,10 +107,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /*
@@ -164,12 +146,9 @@ sup {
 */
 
 table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
 }
 
 /*
@@ -183,18 +162,12 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
 }
 
 /*
@@ -215,12 +188,9 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
 }
 
 /*
@@ -262,10 +232,8 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /*
@@ -282,10 +250,8 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /*
@@ -347,25 +313,19 @@ textarea {
 */
 
 input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
 input::placeholder,
 textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
 /*
@@ -380,7 +340,6 @@ button,
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
-
 :disabled {
   cursor: default;
 }
@@ -399,10 +358,8 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
 }
 
 /*
@@ -467,63 +424,55 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-
 .container {
   width: 100%;
 }
-
 @media (min-width: 640px) {
+
   .container {
     max-width: 640px;
   }
 }
-
 @media (min-width: 768px) {
+
   .container {
     max-width: 768px;
   }
 }
-
 @media (min-width: 1024px) {
+
   .container {
     max-width: 1024px;
   }
 }
-
 @media (min-width: 1280px) {
+
   .container {
     max-width: 1280px;
   }
 }
-
 @media (min-width: 1536px) {
+
   .container {
     max-width: 1536px;
   }
 }
-
 .table {
   display: table;
 }
-
+/* background: #1FBBF4;
+    background: linear-gradient(to bottom, #1FBBF4, #E11FAE); */
 body {
-  /*
-    @apply
-    bg-gray-800
-
-     */
-  background: #1FBBF4;
-  background: linear-gradient(to bottom, #1FBBF4, #E11FAE);
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
-
 header {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
   padding: 1rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
 header .container {
   margin-left: auto;
   margin-right: auto;
@@ -532,34 +481,26 @@ header .container {
   padding-left: 8rem;
   padding-right: 8rem;
 }
-
-header nav {
+header .container nav {
   display: flex;
   width: 100%;
   align-items: center;
 }
-
-header .logo {
+header .container nav .logo {
   flex: 1 1 0%;
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-
-header .menu {
+header .container nav .menu {
+  margin-right: 0.75rem;
   display: flex;
   align-items: center;
 }
-
-.menu {
-  margin-right: 0.75rem;
-}
-
-.menu li {
+header .container nav .menu li {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 }
-
-.menu a {
+header .container nav .menu li a {
   padding: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -567,49 +508,21 @@ header .menu {
   --tw-text-opacity: 1;
   color: rgb(147 197 253 / var(--tw-text-opacity));
 }
-
-.menu a:hover {
+header .container nav .menu li a:hover {
   --tw-text-opacity: 1;
   color: rgb(217 70 239 / var(--tw-text-opacity));
 }
-
-#wallet-connector {
-}
-
-#wallet-connect-button {
-  border-radius: 0.75rem;
-  border-width: 4px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-#wallet-connect-button:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 51 234 / var(--tw-bg-opacity));
-}
-
-#wallet-menu-connected {
-}
-
 main {
   min-height: 100vh;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
 .container#page-landing {
   padding-left: 12rem;
   padding-right: 12rem;
   text-align: center;
 }
-
-#page-landing h1 {
+.container#page-landing h1 {
   margin-top: 6rem;
   margin-bottom: 3rem;
   padding-left: 12rem;
@@ -618,19 +531,16 @@ main {
   line-height: 1;
   font-weight: 700;
 }
-
-#page-landing p {
+.container#page-landing p {
   padding-left: 12rem;
   padding-right: 12rem;
 }
-
-#page-landing .buttons {
+.container#page-landing .buttons {
   margin-top: 4rem;
   display: flex;
   justify-content: center;
 }
-
-#page-landing .buttons a {
+.container#page-landing .buttons a {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   border-radius: 0.375rem;
@@ -641,27 +551,22 @@ main {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-
-#page-landing .buttons a:first-of-type {
+.container#page-landing .buttons a:first-of-type {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
-
-#page-landing .buttons a:first-of-type:hover {
+.container#page-landing .buttons a:first-of-type:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
-
-#page-landing .buttons a:last-of-type {
+.container#page-landing .buttons a:last-of-type {
   --tw-bg-opacity: 1;
   background-color: rgb(192 38 211 / var(--tw-bg-opacity));
 }
-
-#page-landing .buttons a:last-of-type:hover {
+.container#page-landing .buttons a:last-of-type:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(217 70 239 / var(--tw-bg-opacity));
 }
-
 .container.page {
   margin-left: auto;
   margin-right: auto;
@@ -670,20 +575,19 @@ main {
   padding-left: 12rem;
   padding-right: 12rem;
 }
-
 .container.page h1 {
   margin-bottom: 1rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-
-/* Rules */
-
 .container.page a {
   --tw-text-opacity: 1;
-  color: rgb(112 26 117 / var(--tw-text-opacity));
+  color: rgb(147 197 253 / var(--tw-text-opacity));
 }
-
+.container.page a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(217 70 239 / var(--tw-text-opacity));
+}
 .container.page pre {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -691,20 +595,17 @@ main {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
   padding: 1rem;
 }
-
 .container.page pre b {
   --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+  background-color: rgb(112 26 117 / var(--tw-bg-opacity));
 }
-
-#app {
-}
-
 #app .container {
   display: flex;
   min-height: 100vh;
 }
-
+#app .main {
+  width: 100%;
+}
 #app .sidebar {
   width: 25%;
   cursor: pointer;
@@ -712,7 +613,6 @@ main {
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
   padding: 0.25rem;
 }
-
 #app .sidebar .connect-wallet {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
@@ -721,17 +621,14 @@ main {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-
 #app .sidebar .connect-wallet:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
-
 #app .sidebar .connect-wallet.key {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-
 #app .sidebar .sidebar-item {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -741,16 +638,11 @@ main {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-
 #app .sidebar .sidebar-item:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(15 118 110 / var(--tw-bg-opacity));
 }
-
-#app .main {
-  width: 100%;
-}
-
+/* todo remove */
 #app .error-wallet-not-connected {
   margin-left: auto;
   margin-right: auto;
@@ -761,20 +653,16 @@ main {
   padding: 1.25rem;
   text-align: center;
 }
-
 #app .app-page {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-
 #app .app-page .container-play {
   display: flex;
 }
-
 #app .app-page .container-play .side-play {
   padding: 2.5rem;
 }
-
 #app .app-page .container-play .side-play .button-play {
   border-radius: 0.75rem;
   border-width: 4px;
@@ -787,17 +675,14 @@ main {
   font-size: 3rem;
   line-height: 1;
 }
-
 #app .app-page .container-play .side-play .button-play:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(147 51 234 / var(--tw-bg-opacity));
 }
-
 #app .app-page .container-play .side-result {
   width: 100%;
   padding: 2.5rem;
 }
-
 #app .app-page .container-play .side-result .box-result {
   word-break: break-all;
   border-radius: 0.75rem;
@@ -805,7 +690,6 @@ main {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
-
 #app .app-page .container-play .side-result .box-result .box-result-header {
   padding: 1rem;
   text-align: center;
@@ -813,52 +697,38 @@ main {
   line-height: 2rem;
   font-weight: 700;
 }
-
 #app .app-page .container-play .side-result .box-result .box-result-line {
   display: flex;
   align-items: center;
 }
-
 #app .app-page .container-play .side-result .box-result .box-result-line > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
 }
-
 #app .app-page .container-play .side-result .box-result .box-result-lite-status {
   padding: 1rem;
 }
-
+#app .app-page .container-play .side-result .box-result .box-result-lite-status img {
+                            width: 30px;
+                        }
+@-webkit-keyframes loader{
+                            to{ transform: rotate(360deg); }
+                        }
+@keyframes loader{
+                            to{ transform: rotate(360deg); }
+                        }
+#app .app-page .container-play .side-result .box-result .box-result-lite-status.loader {
+                            -webkit-animation: loader 3s linear infinite;
+                                    animation: loader 3s linear infinite;
+                        }
 #app .app-page .container-play .side-result .box-result .box-result-line-signature {
   flex: 1 1 0%;
   padding: 1rem;
 }
-
-#app .app-page .container-play .side-result .box-result .box-result-lite-status img {
-  width: 30px;
-}
-
-@-webkit-keyframes loader{
-  to{
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes loader{
-  to{
-    transform: rotate(360deg);
-  }
-}
-
-.box-result-lite-status img.loader {
-  -webkit-animation: loader 3s linear infinite;
-          animation: loader 3s linear infinite;
-}
-
 table {
   min-width: 100%;
 }
-
 table > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -866,13 +736,11 @@ table > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
-
 table thead {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-
-table th {
+table thead th {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -886,7 +754,6 @@ table th {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
-
 table tbody > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -894,13 +761,11 @@ table tbody > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
-
 table tbody {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-
-table td {
+table tbody td {
   white-space: nowrap;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -909,7 +774,6 @@ table td {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
-
 .pagination {
   display: flex;
   flex-wrap: wrap;
@@ -919,7 +783,6 @@ table td {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   padding: 1rem;
 }
-
 .pagination .link {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -939,7 +802,6 @@ table td {
   --tw-shadow-color: rgb(107 114 128 / 0.5);
   --tw-shadow: var(--tw-shadow-colored);
 }
-
 .pagination .link.active {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -948,7 +810,6 @@ table td {
   --tw-shadow-color: inherit;
   --tw-shadow: var(--tw-shadow-colored);
 }
-
 footer {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
@@ -957,8 +818,8 @@ footer {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
 footer a {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+

@@ -2,346 +2,312 @@
 @tailwind components;
 @tailwind utilities;
 
+/* background: #1FBBF4;
+    background: linear-gradient(to bottom, #1FBBF4, #E11FAE); */
 body {
-    /*
     @apply
     bg-gray-800
-
-     */
-    background: #1FBBF4;
-
-    background: linear-gradient(to bottom, #1FBBF4, #E11FAE);
 }
+
 
 header {
     @apply
-    bg-slate-800
+    bg-gray-900
     p-4
-    text-white
+    text-white;
+
+    .container {
+        @apply
+        mx-auto
+        px-32
+        flex
+        items-center;
+
+        nav {
+            @apply
+            flex
+            w-full
+            items-center;
+
+           .logo {
+               @apply
+               flex-1
+               text-3xl;
+           }
+
+            .menu {
+                @apply
+                flex
+                items-center
+                mr-3;
+
+                li {
+                    @apply
+                    mx-3;
+
+                    a {
+                        @apply
+                        text-xl
+                        p-2
+                        font-bold
+                        text-blue-300
+                        hover:text-fuchsia-500;
+                    }
+                }
+            }
+        }
+    }
 }
-
-header .container {
-    @apply
-    mx-auto
-    px-32
-    flex
-    items-center
-
-}
-
-header nav {
-    @apply
-    flex
-    w-full
-    items-center
-}
-
-header .logo {
-    @apply
-    flex-1
-    text-3xl
-}
-
-header .menu {
-    @apply
-    flex
-    items-center
-}
-
-.menu {
-    @apply
-    mr-3
-}
-
-.menu li {
-    @apply
-    mx-3;
-}
-
-.menu a {
-    @apply
-    text-xl
-    p-2
-    font-bold
-    text-blue-300
-    hover:text-fuchsia-500
-}
-
-#wallet-connector {
-
-}
-
-#wallet-connect-button {
-    @apply
-    px-8
-    py-4
-    text-xl
-    rounded-xl
-    bg-purple-700
-    hover:bg-purple-600
-    border-4
-}
-
-#wallet-menu-connected {
-
-}
-
 
 main {
     @apply
-
     min-h-screen
-    text-white
+    text-white;
 }
 
 .container#page-landing {
     @apply
     px-48
-    text-center
-}
+    text-center;
 
-#page-landing h1 {
-    @apply
-    text-5xl
-    mt-24
-    mb-12
-    font-bold
-    px-48
-}
+    h1 {
+        @apply
+        text-5xl
+        mt-24
+        mb-12
+        font-bold
+        px-48
+    }
 
-#page-landing p {
-    @apply
-    px-48
-}
+    p {
+        @apply
+        px-48;
+    }
 
-#page-landing .buttons {
-    @apply
-    mt-16
-    flex
-    justify-center
-}
+    .buttons {
+        @apply
+        mt-16
+        flex
+        justify-center;
 
-#page-landing .buttons a {
-    @apply
-    text-2xl
-    mx-6
+        a {
+            @apply
+            text-2xl
+            mx-6
+            px-24
+            py-6
+            rounded-md;
 
-    px-24
-    py-6
-    rounded-md
-}
+            &:first-of-type {
+                @apply
+                bg-blue-500
+                hover:bg-blue-400;
+            }
 
-#page-landing .buttons a:first-of-type {
-    @apply
-    bg-blue-500
-    hover:bg-blue-400
-
-}
-
-#page-landing .buttons a:last-of-type {
-    @apply
-    bg-fuchsia-600
-    hover:bg-fuchsia-500
+            &:last-of-type {
+                @apply
+                bg-fuchsia-600
+                hover:bg-fuchsia-500;
+            }
+        }
+    }
 }
 
 .container.page {
     @apply
     mx-auto
     my-8
-    px-48
-}
+    px-48;
 
-.container.page h1 {
-    @apply
-    text-3xl
-    mb-4
-}
-/* Rules */
+    h1 {
+        @apply
+        text-3xl
+        mb-4
+    }
 
-.container.page a {
-    @apply
-    text-fuchsia-900
-}
+    a {
+        @apply
+        text-blue-300
+        hover:text-fuchsia-500
+    }
 
-.container.page pre {
-    @apply
-    bg-gray-900
-    p-4
-    my-4
-}
+    pre {
+        @apply
+        bg-gray-900
+        p-4
+        my-4;
 
-.container.page pre b {
-    @apply
-    bg-red-900
+        b {
+            @apply
+            bg-fuchsia-900
+        }
+    }
 }
 
 #app {
 
-}
+    .container {
+        @apply
+        flex
+        min-h-screen;
+    }
 
-#app .container {
-    @apply
-    flex
-    min-h-screen
-}
+    .main {
+        @apply
+        w-full
+    }
+    .sidebar {
+        @apply
+        bg-gray-500
+        w-1/4
+        p-1
+        cursor-pointer;
 
-#app .sidebar {
-    @apply
-    bg-gray-500
-    w-1/4
-    p-1
-    cursor-pointer
-}
+        .connect-wallet {
+            @apply
+            p-4
+            text-2xl
+            text-center
+                /*4e44ce*/
+            bg-gray-900
+            hover:bg-gray-800
+        }
 
-#app .sidebar .connect-wallet {
-    @apply
-    p-4
-    text-2xl
-    text-center
-        /*4e44ce*/
-    bg-gray-900
-    hover:bg-gray-800
-}
+        .connect-wallet.key {
+            @apply
+            text-sm
+        }
 
-#app .sidebar .connect-wallet.key {
-    @apply
-    text-sm
-}
+        .sidebar-item {
+            @apply
+            p-2
+            text-xl
+            my-2
+            bg-teal-900
+            hover:bg-teal-700
+        }
+    }
 
-#app .sidebar .sidebar-item {
-    @apply
-    p-2
-    text-xl
-    my-2
-    bg-teal-900
-    hover:bg-teal-700
-}
+    /* todo remove */
+    .error-wallet-not-connected {
+        @apply
+        bg-orange-400
+        p-5
+        w-5/12
+        mx-auto
+        text-center
+        mt-32
+    }
 
-#app .main {
-    @apply
-    w-full
-}
+    .app-page {
+        @apply
+        px-6;
 
-#app .error-wallet-not-connected {
-    @apply
-    bg-orange-400
-    p-5
-    w-5/12
-    mx-auto
-    text-center
-    mt-32
-}
+        .container-play {
+            @apply
+            flex;
 
-#app .app-page {
-    @apply
-    px-6
-}
+            .side-play {
+                @apply
+                p-10;
 
-#app .app-page .container-play {
-    @apply
-    flex
+                .button-play {
+                    @apply
+                    px-24
+                    py-4
+                    text-5xl
+                    rounded-xl
+                    bg-purple-700
+                    hover:bg-purple-600
+                    border-4
+                }
+            }
 
-}
+            .side-result {
+                @apply
+                p-10
+                w-full;
 
-#app .app-page .container-play .side-play {
-    @apply
-    p-10
-}
+                .box-result {
+                    @apply
+                    bg-slate-800
+                    rounded-xl
+                    border-4
+                    break-all;
 
-#app .app-page .container-play .side-play .button-play {
-    @apply
-    px-24
-    py-4
-    text-5xl
-    rounded-xl
-    bg-purple-700
-    hover:bg-purple-600
-    border-4
-}
+                    .box-result-header {
+                        @apply
+                        p-4
+                        text-center
+                        text-2xl
+                        font-bold
+                    }
 
-#app .app-page .container-play .side-result {
-    @apply
-    p-10
-    w-full
-}
+                    .box-result-line {
+                        @apply
+                        flex
+                        items-center
+                        divide-y-2
+                    }
 
-#app .app-page .container-play .side-result .box-result {
-    @apply
-    bg-slate-800
-    rounded-xl
-    border-4
-    break-all
-}
+                    .box-result-lite-status {
+                        @apply
+                        p-4;
 
-#app .app-page .container-play .side-result .box-result .box-result-header {
-    @apply
-    p-4
-    text-center
-    text-2xl
-    font-bold
-}
+                        img {
+                            width: 30px;
+                        }
 
-#app .app-page .container-play .side-result .box-result .box-result-line {
-    @apply
-    flex
-    items-center
-    divide-y-2
-}
+                        @keyframes loader{
+                            to{ transform: rotate(360deg); }
+                        }
 
-#app .app-page .container-play .side-result .box-result .box-result-lite-status {
-    @apply
-    p-4
-}
-#app .app-page .container-play .side-result .box-result .box-result-line-signature {
-    @apply
-    p-4
-    flex-1
+                        &.loader {
+                            animation: loader 3s linear infinite;
+                        }
+                    }
 
-}
-
-
-#app .app-page .container-play .side-result .box-result .box-result-lite-status img {
-    width: 30px;
-}
-
-@keyframes loader{
-    to{ transform: rotate(360deg); }
-}
-
-.box-result-lite-status img.loader {
-    animation: loader 3s linear infinite;
+                    .box-result-line-signature {
+                        @apply
+                        p-4
+                        flex-1;
+                    }
+                }
+            }
+        }
+    }
 }
 
 table {
     @apply
     min-w-full
     divide-y
-    divide-gray-200
-}
+    divide-gray-200;
 
-table thead {
-    @apply
-    bg-gray-50
-}
+    thead {
+        @apply
+        bg-gray-50;
 
-table th {
-    @apply
-    px-6
-    py-3
-    text-left text-xs font-medium text-gray-500 uppercase tracking-wider
-}
+        th {
+            @apply
+            px-6
+            py-3
+            text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+        }
+    }
 
-table tbody {
-    @apply
-    bg-white divide-y divide-gray-200
-}
+    tbody {
+        @apply
+        bg-white divide-y divide-gray-200;
 
-table td {
-    @apply
-    px-6
-    py-2
-    whitespace-nowrap
-    text-gray-600
+        td {
+            @apply
+            px-6
+            py-2
+            whitespace-nowrap
+            text-gray-600
+        }
+    }
 }
 
 .pagination {
@@ -377,18 +343,16 @@ table td {
     text-red-600
 }
 
-
-
 footer {
     @apply
     p-4
     bg-gray-900
     text-white
-    text-center
+    text-center;
+
+    a {
+        @apply
+        mx-4;
+    }
 }
 
-footer a {
-    @apply
-    mx-4
-
-}
