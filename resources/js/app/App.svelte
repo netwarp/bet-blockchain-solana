@@ -4,39 +4,19 @@
     import Play from './pages/Play'
     import History from './pages/History'
 
-   // let is_connected = false
-    //let public_key = ''
-
-    const getProvider = async () => {
-        if ("solana" in window) {
-            const provider = window.solana
-            if (provider.isPhantom) {
-                return provider
-            }
-        }
-        window.open("https://phantom.app/", "_blank")
-    }
-
-    async function connectWallet() {
-        const provider = await getProvider()
-        const response = await provider.connect()
-        const response_public_key = response.publicKey.toString()
-        public_key.set(response_public_key)
-        $is_connected = true
-    }
+    import ConnectWallet from './components/Connect-Wallet.svelte'
 
     function disconnect() {
         window.solana.disconnect()
         $is_connected = false
     }
 
-
 </script>
 
 <div class="container">
     <div class="sidebar">
         {#if $is_connected === false}
-            <div class="connect-wallet" on:click={connectWallet}>Connect wallet</div>
+            <ConnectWallet text="Connect wallet" />
         {:else }
             <div class="connect-wallet key">{$public_key}</div>
         {/if}

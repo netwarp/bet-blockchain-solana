@@ -9,7 +9,6 @@ body {
     bg-gray-800
 }
 
-
 header {
     @apply
     bg-gray-900
@@ -156,9 +155,10 @@ main {
         @apply
         w-full
     }
+
     .sidebar {
         @apply
-        bg-gray-500
+        bg-gray-900
         w-1/4
         p-1
         cursor-pointer;
@@ -183,20 +183,31 @@ main {
             p-2
             text-xl
             my-2
-            bg-teal-900
-            hover:bg-teal-700
+            bg-gray-700
+            hover:bg-gray-800;
+
+            &.active {
+                @apply
+                bg-blue-500;
+            }
         }
     }
 
-    /* todo remove */
-    .error-wallet-not-connected {
+    .wallet-connector {
         @apply
-        bg-orange-400
-        p-5
-        w-5/12
+        bg-fuchsia-700
+        hover:bg-fuchsia-800
         mx-auto
-        text-center
-        mt-32
+        p-3
+        cursor-pointer
+        text-center;
+
+        &.central {
+            @apply
+            w-5/12
+            mt-32
+        }
+
     }
 
     .app-page {
@@ -217,9 +228,8 @@ main {
                     py-4
                     text-5xl
                     rounded-xl
-                    bg-purple-700
-                    hover:bg-purple-600
-                    border-4
+                    bg-blue-500
+                    hover:bg-blue-400
                 }
             }
 
@@ -232,7 +242,7 @@ main {
                     @apply
                     bg-slate-800
                     rounded-xl
-                    border-4
+                    border-2
                     break-all;
 
                     .box-result-header {

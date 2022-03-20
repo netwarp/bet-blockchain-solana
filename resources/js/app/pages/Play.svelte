@@ -2,6 +2,8 @@
     import {is_connected, public_key} from '../_store'
     import config from '../_store'
 
+    import ConnectWallet from '../components/Connect-Wallet'
+
     let plays = []
 
     import { io } from "socket.io-client"
@@ -57,9 +59,7 @@
 
 <div class="app-page">
     {#if $is_connected === false}
-        <div class="error-wallet-not-connected">
-            Connect your wallet to play
-        </div>
+        <ConnectWallet text="Connect your wallet to play" central="true"/>
     {:else }
         <div class="container-play">
             <div class="side-play">

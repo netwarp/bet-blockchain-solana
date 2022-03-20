@@ -3,6 +3,8 @@
     import axios from 'axios'
     import {is_connected, public_key} from '../_store'
 
+    import ConnectWallet from '../components/Connect-Wallet'
+
     let transactions = []
     let pages = 1
 
@@ -31,9 +33,7 @@
     <h1>History:</h1>
 
     {#if $is_connected === false}
-        <div class="error-wallet-not-connected">
-            Connect your wallet to play
-        </div>
+        <ConnectWallet text="Connect your wallet to see your history" central="true"/>
     {:else }
         <table>
             <thead>
