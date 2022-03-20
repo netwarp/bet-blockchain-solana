@@ -632,6 +632,7 @@ main {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 #app .sidebar .connect-wallet.key {
+  overflow-wrap: break-word;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -670,14 +671,14 @@ main {
   width: 41.666667%;
 }
 #app .app-page {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 #app .app-page .container-play {
   display: flex;
 }
 #app .app-page .container-play .side-play {
-  padding: 2.5rem;
+  padding: 2rem;
 }
 #app .app-page .container-play .side-play .button-play {
   border-radius: 0.75rem;
@@ -687,8 +688,6 @@ main {
   padding-right: 6rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-size: 3rem;
-  line-height: 1;
 }
 #app .app-page .container-play .side-play .button-play:hover {
   --tw-bg-opacity: 1;
@@ -696,7 +695,7 @@ main {
 }
 #app .app-page .container-play .side-result {
   width: 100%;
-  padding: 2.5rem;
+  padding: 2rem;
 }
 #app .app-page .container-play .side-result .box-result {
   word-break: break-all;
@@ -707,10 +706,6 @@ main {
 }
 #app .app-page .container-play .side-result .box-result .box-result-header {
   padding: 1rem;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
 }
 #app .app-page .container-play .side-result .box-result .box-result-line {
   display: flex;

@@ -8,7 +8,8 @@
     "migrate": "node database/migrations/run.mjs",
     "dev:server": "npx nodemon index.mjs",
     "dev:css": "npx postcss resources/sass/app.scss -o public/css/app.css -w",
-    "dev:js": "npx mix watch"
+    "dev:js": "npx mix watch",
+    "dev:micro:reward": "npx nodemon microservices/reward.mjs"
   },
   "dependencies": {
     "@solana/wallet-adapter-base": "^0.8.1",

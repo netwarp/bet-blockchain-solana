@@ -172,14 +172,14 @@ main {
             p-4
             text-2xl
             text-center
-                /*4e44ce*/
             bg-gray-900
-            hover:bg-gray-800
-        }
+            hover:bg-gray-800;
 
-        .connect-wallet.key {
-            @apply
-            text-sm
+            &.key {
+                @apply
+                text-sm
+                break-words
+            }
         }
 
         .sidebar-item {
@@ -216,7 +216,7 @@ main {
 
     .app-page {
         @apply
-        px-6;
+        px-4;
 
         .container-play {
             @apply
@@ -224,13 +224,12 @@ main {
 
             .side-play {
                 @apply
-                p-10;
+                p-8;
 
                 .button-play {
                     @apply
                     px-24
                     py-4
-                    text-5xl
                     rounded-xl
                     bg-blue-500
                     hover:bg-blue-400
@@ -239,7 +238,7 @@ main {
 
             .side-result {
                 @apply
-                p-10
+                p-8
                 w-full;
 
                 .box-result {
@@ -252,9 +251,6 @@ main {
                     .box-result-header {
                         @apply
                         p-4
-                        text-center
-                        text-2xl
-                        font-bold
                     }
 
                     .box-result-line {
