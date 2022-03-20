@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "node .\\node_modules\\mocha\\bin\\mocha",
-    "migrate": "node database/migrations/run.mjs"
+    "migrate": "node database/migrations/run.mjs",
+    "css": "npx tailwind -i resources/sass/app.scss -o public/css/app.css -w"
   },
   "dependencies": {
     "@solana/wallet-adapter-base": "^0.8.1",

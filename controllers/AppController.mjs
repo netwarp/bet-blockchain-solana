@@ -13,6 +13,14 @@ export async function rules(request, response) {
 }
 
 export async function stats(request, response) {
-    response.render('stats.html')
+    const transactions = await Transaction.count()
+
+    const data = {
+        transactions
+    }
+
+    console.log(data)
+
+    response.render('stats.html', data)
 }
 
