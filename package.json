@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node .\\node_modules\\mocha\\bin\\mocha",
     "migrate": "node database/migrations/run.mjs",
+    "dev:server": "npx nodemon index.mjs",
     "dev:css": "npx postcss resources/sass/app.scss -o public/css/app.css -w",
     "dev:js": "npx mix watch"
   },

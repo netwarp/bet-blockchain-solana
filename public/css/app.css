@@ -460,6 +460,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .table {
   display: table;
 }
+@-webkit-keyframes loader{
+    to{ transform: rotate(360deg); }
+}
+@keyframes loader{
+    to{ transform: rotate(360deg); }
+}
 /* background: #1FBBF4;
     background: linear-gradient(to bottom, #1FBBF4, #E11FAE); */
 body {
@@ -720,12 +726,6 @@ main {
 }
 #app .app-page .container-play .side-result .box-result .box-result-lite-status img {
                             width: 30px;
-                        }
-@-webkit-keyframes loader{
-                            to{ transform: rotate(360deg); }
-                        }
-@keyframes loader{
-                            to{ transform: rotate(360deg); }
                         }
 #app .app-page .container-play .side-result .box-result .box-result-lite-status.loader {
                             -webkit-animation: loader 3s linear infinite;

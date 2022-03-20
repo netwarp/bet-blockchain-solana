@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes loader{
+    to{ transform: rotate(360deg); }
+}
+
 /* background: #1FBBF4;
     background: linear-gradient(to bottom, #1FBBF4, #E11FAE); */
 body {
@@ -266,10 +270,6 @@ main {
 
                         img {
                             width: 30px;
-                        }
-
-                        @keyframes loader{
-                            to{ transform: rotate(360deg); }
                         }
 
                         &.loader {
