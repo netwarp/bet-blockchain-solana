@@ -17,7 +17,7 @@ export async function history(request, response) {
         return response.sendStatus(404)
     }
 
-    const limit = 3
+    const limit = 30
     const page = request.body.page ?? 1
 
     const offset = page > 1 ? (page - 1) * limit : 0

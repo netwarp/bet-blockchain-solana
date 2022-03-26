@@ -90,6 +90,7 @@
                                 {/if}
                             </td>
                             <td>
+                                <!-- TODO cluster in dotenv -->
                                 <a href="https://explorer.solana.com/tx/{play.signature}?cluster=devnet" target="_blank">
                                     {play.signature}
                                 </a>

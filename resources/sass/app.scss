@@ -298,7 +298,7 @@ table {
             text-gray-100;
 
             img {
-                width: 30px;
+                width: 23px;
             }
 
             a {
@@ -316,31 +316,26 @@ table {
     flex-wrap
     justify-center
     p-4
-    bg-gray-100
-    rounded-full
+
 }
 
 .pagination .link {
     @apply
-    bg-red-500
+    bg-blue-500
     w-8
     h-8
-    rounded-full
     p-4
     flex
     justify-center
     items-center
-    mx-4
-    cursor-pointer
-    shadow-lg
-    shadow-gray-500/50
-}
+    cursor-pointer;
 
-.pagination .link.active {
-    @apply
-    shadow-inherit
-    bg-white
-    text-red-600
+    &.active {
+        @apply
+        shadow-inherit
+        bg-white
+        text-blue-600
+    }
 }
 
 footer {
