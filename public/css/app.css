@@ -531,11 +531,16 @@ main {
 .container#page-landing h1 {
   margin-top: 6rem;
   margin-bottom: 3rem;
-  padding-left: 12rem;
-  padding-right: 12rem;
   font-size: 3rem;
   line-height: 1;
   font-weight: 700;
+}
+@media (min-width: 1024px) {
+
+  .container#page-landing h1 {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
 }
 .container#page-landing p {
   padding-left: 12rem;
@@ -676,11 +681,14 @@ main {
 }
 #app .app-page .container-play {
   display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
-#app .app-page .container-play .side-play {
-  padding: 2rem;
+#app .app-page .container-play .play-line {
+  margin-bottom: 1rem;
+  display: flex;
 }
-#app .app-page .container-play .side-play .button-play {
+#app .app-page .container-play .play-line .button-play {
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -689,48 +697,20 @@ main {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-#app .app-page .container-play .side-play .button-play:hover {
+#app .app-page .container-play .play-line .button-play:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
-#app .app-page .container-play .side-result {
-  width: 100%;
-  padding: 2rem;
-}
-#app .app-page .container-play .side-result .box-result {
-  word-break: break-all;
-  border-radius: 0.75rem;
-  border-width: 2px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-#app .app-page .container-play .side-result .box-result .box-result-header {
-  padding: 1rem;
-}
-#app .app-page .container-play .side-result .box-result .box-result-line {
-  display: flex;
-  align-items: center;
-}
-#app .app-page .container-play .side-result .box-result .box-result-line > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
-}
-#app .app-page .container-play .side-result .box-result .box-result-lite-status {
-  padding: 1rem;
-}
-#app .app-page .container-play .side-result .box-result .box-result-lite-status img {
-                            width: 30px;
-                        }
-#app .app-page .container-play .side-result .box-result .box-result-lite-status.loader {
-                            -webkit-animation: loader 3s linear infinite;
-                                    animation: loader 3s linear infinite;
-                        }
-#app .app-page .container-play .side-result .box-result .box-result-line-signature {
-  flex: 1 1 0%;
-  padding: 1rem;
+#app .app-page .container-play table.result-line thead {
+
+                }
+#app .app-page .container-play table.result-line tbody td {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 table {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   min-width: 100%;
 }
 table > :not([hidden]) ~ :not([hidden]) {
@@ -740,11 +720,9 @@ table > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
-table thead {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
 table thead th {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -756,7 +734,7 @@ table thead th {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 table tbody > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
@@ -765,9 +743,9 @@ table tbody > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
-table tbody {
+table tbody tr:nth-child(odd) {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 table tbody td {
   white-space: nowrap;
@@ -776,7 +754,14 @@ table tbody td {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+table tbody td img {
+                width: 30px;
+            }
+table tbody td a {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .pagination {
   display: flex;

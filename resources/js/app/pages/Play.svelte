@@ -62,36 +62,42 @@
         <ConnectWallet text="Connect your wallet to play" central="true"/>
     {:else }
         <div class="container-play">
-            <div class="side-play">
+            <div class="play-line">
                 <button class="button-play" on:click={play}>Play</button>
+                <div class="ad"></div>
             </div>
-            <div class="side-result">
-                <div class="box-result">
-                    <div class="box-result-header">
-                        Results:
-                    </div>
-                    <div class="box-result-lines">
-                        {#each plays as play}
-                            <div class="box-result-line">
-                                <div class="box-result-lite-status">
-                                    {#if play.status === 'loading'}
-                                        <img src="/images/icon-load.svg" alt="" class="loader">
-                                    {:else if play.status === 'won' }
-                                        <img src="/images/icon-won.svg" alt="">
-                                    {:else if play.status === 'lost' }
-                                        <img src="/images/icon-lost.svg" alt="">
-                                    {/if}
-                                </div>
-                                <div class="box-result-lite-signature">
-                                    <a href="https://explorer.solana.com/tx/{play.signature}?cluster=devnet" target="_blank">
-                                        {play.signature}
-                                    </a>
-                                </div>
-                            </div>
-                        {/each}
-                    </div>
-                </div>
-            </div>
+            <table class="result-line">
+                <thead>
+                    <tr>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {#if plays.length === 0}
+                        <tr>
+                            <td colspan="2">No result</td>
+                        </tr>
+                    {/if}
+                    {#each plays as play}
+                        <tr>
+                            <td>
+                                {#if play.status === 'loading'}
+                                    <img src="/images/icon-load.svg" alt="" class="loader">
+                                {:else if play.status === 'won' }
+                                    <img src="/images/icon-won.svg" alt="">
+                                {:else if play.status === 'lost' }
+                                    <img src="/images/icon-lost.svg" alt="">
+                                {/if}
+                            </td>
+                            <td>
+                                <a href="https://explorer.solana.com/tx/{play.signature}?cluster=devnet" target="_blank">
+                                    {play.signature}
+                                </a>
+                            </td>
+                        </tr>
+                    {/each}
+                </tbody>
+            </table>
         </div>
     {/if}
 </div>
