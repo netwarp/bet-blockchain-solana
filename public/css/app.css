@@ -692,10 +692,12 @@ main {
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 #app .app-page .container-play .play-line .button-play:hover {
   --tw-bg-opacity: 1;
