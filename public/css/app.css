@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .table {
   display: table;
 }
+.hidden {
+  display: none;
+}
 @-webkit-keyframes loader{
     to{ transform: rotate(360deg); }
 }
@@ -502,8 +505,14 @@ header .container nav .logo {
 }
 header .container nav .menu {
   margin-right: 0.75rem;
-  display: flex;
+  display: none;
   align-items: center;
+}
+@media (min-width: 768px) {
+
+  header .container nav .menu {
+    display: flex;
+  }
 }
 header .container nav .menu li {
   margin-left: 0.75rem;
@@ -518,6 +527,59 @@ header .container nav .menu li a {
   color: rgb(147 197 253 / var(--tw-text-opacity));
 }
 header .container nav .menu li a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(217 70 239 / var(--tw-text-opacity));
+}
+header .container nav .icon-menu {
+  margin-right: 2rem;
+  display: block;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+@media (min-width: 768px) {
+
+  header .container nav .icon-menu {
+    display: none;
+  }
+}
+header .container nav .icon-menu svg {
+                    transform: scale(2.5);
+                    cursor: pointer;
+                }
+.menu-responsive {
+  position: fixed;
+  left: 100%;
+  height: 100%;
+  width: 40%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.menu-responsive.active {
+  left: auto;
+  right: 0.5rem;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.menu-responsive .menu a {
+  display: block;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+.menu-responsive .menu a:hover {
   --tw-text-opacity: 1;
   color: rgb(217 70 239 / var(--tw-text-opacity));
 }
@@ -619,6 +681,8 @@ main {
 .container.page pre {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  overflow-wrap: normal;
+  word-break: normal;
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
   padding: 1rem;
