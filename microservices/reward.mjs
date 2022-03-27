@@ -1,6 +1,7 @@
 import * as web3 from '@solana/web3.js'
 import base58 from 'bs58'
 import config from '../services/config.mjs'
+import Reward from '../models/Reward.mjs'
 
 import {percent} from '../core/utils.mjs'
 
@@ -47,9 +48,14 @@ await client.subscribe('rewards', async (address) => {
     transaction.feePayer = keypair.publicKey
     transaction.recentBlockhash =  (await connection.getRecentBlockhash()).blockhash
 
-    const tx = await sendAndConfirmTransaction(connection, transaction, [keypair])
+    const signature = await sendAndConfirmTransaction(connection, transaction, [keypair])
     console.log(transaction)
-    console.log(tx)
+    console.log(signature)
+
+    await Reward.create({
+        address,
+        signature
+    })
 
     console.log('success reward')
 })

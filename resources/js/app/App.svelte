@@ -3,6 +3,7 @@
 
     import Play from './pages/Play'
     import History from './pages/History'
+    import Rewards from './pages/Rewards'
 
     import ConnectWallet from './components/Connect-Wallet.svelte'
 
@@ -29,7 +30,7 @@
         {#if $view === 'play'}
             <Play />
         {:else if $view === 'rewards'}
-            Rewards
+            <Rewards />
         {:else if $view === 'history'}
             <History />
         {/if}

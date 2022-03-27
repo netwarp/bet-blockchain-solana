@@ -6,5 +6,7 @@ router.get('/', ApiController.index)
 
 router.post('/history', ApiController.history)
 
+router.post('/rewards', ApiController.rewards)
+
 router.post('/play/response', ApiController.response)
 export default router
