@@ -1,5 +1,5 @@
 export function percent(total, percent) {
-    return Math.round(percent * 100 / total)
+    return Math.round(total * percent / 100)
 }
 
 /**
