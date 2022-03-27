@@ -4,6 +4,8 @@ import config from '../services/config.mjs'
 
 import {percent} from '../core/utils.mjs'
 
+console.log('Start microservice reward')
+
 const keypair = web3.Keypair.fromSecretKey(
     base58.decode(config.solana.private_key)
 )

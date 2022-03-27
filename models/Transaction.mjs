@@ -1,7 +1,6 @@
 import Sequelize from 'sequelize'
 import sequelize from '../services/sequelize.mjs'
 
-
 class Transaction extends Sequelize.Model {}
 
 const attributes = {
