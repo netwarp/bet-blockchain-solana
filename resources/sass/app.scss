@@ -83,14 +83,13 @@ header {
     h-full
     w-2/5
     ease-in
-    left-full
-    transition ease-in duration-300;
+    -right-2/4
+    transition-all ease duration-300;
 
     &.active {
         @apply
-        left-auto
-        right-2
-        transition ease-in duration-300
+        right-0
+        transition-all ease duration-300
     }
 
     .menu {

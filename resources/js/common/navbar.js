@@ -29,4 +29,21 @@ export default function navbar() {
 		menu_responsive.classList.toggle('active')
 		hidden = ! hidden
 	})
+
+	document.body.addEventListener('click', (event) => {
+		const tag = event.target.tagName
+
+		if (
+			menu_responsive.classList.contains('active') &&
+			! hidden &&
+			tag !== 'path' &&
+			tag !== 'svg'
+		) {
+
+			switchIcon(icon_burger)
+			menu_responsive.classList.toggle('active')
+			hidden = ! hidden
+		}
+
+	})
 }
