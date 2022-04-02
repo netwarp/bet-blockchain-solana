@@ -788,6 +788,10 @@ main {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+#app .app-page .container-play table.result-line tbody td .loader {
+                            -webkit-animation: 1.5s linear loader infinite;
+                                    animation: 1.5s linear loader infinite;
+                        }
 table {
   margin-top: 2rem;
   margin-bottom: 2rem;

@@ -303,7 +303,11 @@ main {
 
                     td {
                         @apply
-                        text-sm
+                        text-sm;
+
+                        .loader {
+                            animation: 1.5s linear loader infinite;
+                        }
                     }
                 }
             }
