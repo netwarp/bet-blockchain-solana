@@ -2,6 +2,7 @@
     import {onMount} from 'svelte'
     import axios from 'axios'
     import {is_connected, public_key} from '../_store'
+    import config from '../_store'
 
     import ConnectWallet from '../components/Connect-Wallet'
 
@@ -61,7 +62,7 @@
                         </td>
                         <td>
                             <!-- TODO cluster dotenv -->
-                            <a href="https://explorer.solana.com/tx/{transaction.signature}?cluster=devnet" target="_blank">
+                            <a href="https://explorer.solana.com/tx/{transaction.signature}?cluster={config.solana.network}" target="_blank">
                                 {transaction.signature}
                             </a>
                         </td>
