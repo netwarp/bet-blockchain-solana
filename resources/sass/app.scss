@@ -84,12 +84,12 @@ header {
     w-2/5
     ease-in
     -right-2/4
-    transition-all ease duration-300;
+    transition-all duration-300;
 
     &.active {
         @apply
         right-0
-        transition-all ease duration-300
+        transition-all duration-300
     }
 
     .menu {
@@ -170,7 +170,7 @@ main {
     @apply
     mx-auto
     my-8
-    px-48;
+    px-8;
 
     h1 {
         @apply

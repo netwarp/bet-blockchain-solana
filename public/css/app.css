@@ -563,7 +563,6 @@ header .container nav .icon-menu svg {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 .menu-responsive .menu a {
   display: block;
@@ -657,8 +656,8 @@ main {
   margin-right: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding-left: 12rem;
-  padding-right: 12rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .container.page h1 {
   margin-bottom: 1rem;
