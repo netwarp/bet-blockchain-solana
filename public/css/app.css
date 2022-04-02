@@ -656,6 +656,7 @@ main {
   margin-right: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  overflow-x: auto;
   padding-left: 2rem;
   padding-right: 2rem;
 }
