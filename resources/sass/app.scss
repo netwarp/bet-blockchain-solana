@@ -203,6 +203,7 @@ main {
 
     .container {
         @apply
+        overflow-x-auto
         flex
         min-h-screen;
     }
