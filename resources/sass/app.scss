@@ -283,12 +283,13 @@ main {
 
                 .button-play {
                     @apply
-                    px-16
-                    py-4
+                    px-12
+                    py-3
+                    font-bold
                     rounded-xl
                     bg-blue-500
                     hover:bg-blue-400
-                    text-xl
+                    text-2xl
                 }
             }
 

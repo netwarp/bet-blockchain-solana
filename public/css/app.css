@@ -773,12 +773,13 @@ main {
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-  padding-left: 4rem;
-  padding-right: 4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
 }
 #app .app-page .container-play .play-line .button-play:hover {
   --tw-bg-opacity: 1;

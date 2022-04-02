@@ -12,7 +12,7 @@ const keypair = web3.Keypair.fromSecretKey(
 )
 
 const connection = new web3.Connection(
-    web3.clusterApiUrl('devnet')
+    web3.clusterApiUrl('devnet') // TODO in .env
 )
 
 console.log(keypair.publicKey.toString())
@@ -34,28 +34,26 @@ await client.subscribe('rewards', async (address) => {
     let balance = await solana_api.getBalance(wallet)
     balance = balance.result.value
 
-    const lamports = percent(balance, 90)
-
-    const transaction = new web3.Transaction().add(
-        web3.SystemProgram.transfer({
+    const transaction = new web3.Transaction()
+        .add(web3.SystemProgram.transfer({
             fromPubkey: keypair.publicKey,
-            //toPubkey: keypair.publicKey,
             toPubkey: address,
-            lamports,
-        })
-    )
+            lamports: percent(balance, 90),
+        }))
+        .add(web3.SystemProgram.transfer({
+            fromPubkey: keypair.publicKey,
+            toPubkey: config.solana.custom,
+            lamports: percent(balance, 6),
+        }))
 
     transaction.feePayer = keypair.publicKey
     transaction.recentBlockhash =  (await connection.getRecentBlockhash()).blockhash
-
     const signature = await sendAndConfirmTransaction(connection, transaction, [keypair])
     console.log(transaction)
     console.log(signature)
 
-    await Reward.create({
-        address,
-        signature
-    })
-
+    await Reward.create({ address, signature})
     console.log('success reward')
+
+    // reward the owner
 })
