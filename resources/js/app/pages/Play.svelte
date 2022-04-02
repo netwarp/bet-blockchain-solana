@@ -19,7 +19,7 @@
             web3.SystemProgram.transfer({
                 fromPubkey: window.solana.publicKey,
                 toPubkey: config.solana.wallet,
-                lamports: 20000,
+                lamports: 1000000,
             })
         )
         transaction.recentBlockhash =  (await connection.getRecentBlockhash()).blockhash
