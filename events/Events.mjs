@@ -1,4 +1,5 @@
 import * as web3 from '@solana/web3.js'
+import config from '../services/config.mjs'
 import Transaction from '../models/Transaction.mjs'
 import io from '../index.mjs'
 import SolanaAPI from '../core/SolanaAPI.mjs'
@@ -11,7 +12,7 @@ await client.connect()
 import {getLatestNumberFromHash} from '../resources/js/utils.mjs'
 
 const connection = new web3.Connection(
-    web3.clusterApiUrl('devnet') // TODO .env
+    web3.clusterApiUrl(config.solana.network)
 )
 
 
@@ -31,11 +32,14 @@ export async function play(data) {
         console.log(signatureResult)
         console.log(console.log(context))
 
-        const solana_api = new SolanaAPI('https://api.devnet.solana.com') // todo .env
+        const solana_api = new SolanaAPI(config.solana.api_url)
         let data = await solana_api.getTransaction(signature)
 
-        let recent_block_hash = data.result.transaction.message.recentBlockhash // TODO put in many lines
-
+        let recent_block_hash = data
+        recent_block_hash = recent_block_hash.result
+        recent_block_hash = recent_block_hash.transaction
+        recent_block_hash = recent_block_hash.message
+        recent_block_hash = recentBlockhash.recentBlockhash
 
         console.log('recent block hash:')
         console.log(recent_block_hash)

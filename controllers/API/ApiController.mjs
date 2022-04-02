@@ -6,11 +6,6 @@ export async function index(request, response) {
     response.json('API v1')
 }
 
-// TODO remove
-export async function response(request, response) {
-    response.sendStatus(200)
-}
-
 export async function history(request, response) {
     const address = request.body.address
 

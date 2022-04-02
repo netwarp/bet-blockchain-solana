@@ -12,7 +12,7 @@ const keypair = web3.Keypair.fromSecretKey(
 )
 
 const connection = new web3.Connection(
-    web3.clusterApiUrl('devnet') // TODO in .env
+    web3.clusterApiUrl(config.solana.network)
 )
 
 console.log(keypair.publicKey.toString())
