@@ -39,7 +39,7 @@
 
 <div class="app-page">
     {#if $is_connected === false}
-        <ConnectWallet text="Connect your wallet to see your history" central="true"/>
+        <ConnectWallet text="Connect your wallet to see your rewards" central="true"/>
     {:else }
         <table>
             <thead>
