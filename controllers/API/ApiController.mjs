@@ -2,8 +2,8 @@ import Transaction from '../../models/Transaction.mjs'
 import Reward from '../../models/Reward.mjs'
 
 export async function index(request, response) {
-
-    response.json('API v1')
+    const ip = request.ip
+    response.json(ip)
 }
 
 export async function history(request, response) {
