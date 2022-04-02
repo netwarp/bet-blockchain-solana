@@ -41,9 +41,14 @@ export default function navbar() {
 		) {
 
 			switchIcon(icon_burger)
-			menu_responsive.classList.toggle('active')
-			hidden = ! hidden
+			menu_responsive.classList.remove('active')
+			hidden = true
 		}
+	})
 
+	window.addEventListener('scroll', (event) => {
+		switchIcon(icon_burger)
+		menu_responsive.classList.remove('active')
+		hidden = true
 	})
 }
