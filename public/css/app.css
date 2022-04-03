@@ -660,6 +660,13 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+@media (min-width: 768px) {
+
+  .container.page {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
 .container.page h1 {
   margin-bottom: 1rem;
   font-size: 1.875rem;

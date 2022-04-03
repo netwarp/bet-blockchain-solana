@@ -171,7 +171,8 @@ main {
     mx-auto
     overflow-x-auto
     my-8
-    px-8;
+    px-8
+    md:px-36;
 
     h1 {
         @apply
