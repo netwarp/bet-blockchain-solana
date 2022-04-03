@@ -61,7 +61,6 @@
                             {/if}
                         </td>
                         <td>
-                            <!-- TODO cluster dotenv -->
                             <a href="https://explorer.solana.com/tx/{transaction.signature}?cluster={config.solana.network}" target="_blank">
                                 {transaction.signature}
                             </a>
