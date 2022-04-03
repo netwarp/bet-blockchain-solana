@@ -1,8 +1,11 @@
 [database]
-    name = 'solana_app'
-    username = 'postgres'
-    password = 'root'
+    name = 'database'
+    username = 'awesome-user'
+    password = 'something'
 
 [solana]
     network = 'devnet'
-    wallet = '<address_wallet>'
+    api_url = 'https://api.devnet.solana.com'
+    wallet = 'server_publicKey'
+    private_key = ''
+    custom = 'reward_address'
