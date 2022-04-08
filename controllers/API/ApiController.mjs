@@ -1,9 +1,20 @@
 import Transaction from '../../models/Transaction.mjs'
 import Reward from '../../models/Reward.mjs'
+import config from '../../services/config.mjs'
 
 export async function index(request, response) {
     const ip = request.ip
     response.json(ip)
+}
+
+export async function cfg(request, response) {
+    const network = config.solana.network
+    const wallet = config.solana.wallet
+
+    response.json({
+        network,
+        wallet
+    })
 }
 
 export async function history(request, response) {
