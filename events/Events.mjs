@@ -9,7 +9,7 @@ const client = createClient()
 client.on('error', (err) => console.log('Redis Client Error', err))
 await client.connect()
 
-import {getLatestNumberFromHash} from '../resources/js/utils.mjs'
+import {getLatestNumberFromHash} from '../core/utils.mjs'
 
 const connection = new web3.Connection(
     web3.clusterApiUrl(config.solana.network)
@@ -76,5 +76,5 @@ export async function play(data) {
                 status: 'lost'
             })
         }
-    }, 'confirmed')
+    }, 'processed')
 }

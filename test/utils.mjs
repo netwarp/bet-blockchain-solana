@@ -1,5 +1,5 @@
 import assert from 'assert'
-import {isNumber, getLatestNumberFromHash} from '../resources/js/utils.mjs'
+import {isNumber, getLatestNumberFromHash} from '../core/utils.mjs'
 
 describe('Tests on numbers', () => {
 
@@ -22,6 +22,10 @@ describe('Tests on numbers', () => {
 
         hash = 'Kv7jg6uFPV4B3p8TTgy34T'
         assert.equal(getLatestNumberFromHash(hash), 4)
+    })
+
+    it('should be connected', () => {
+        return true
     })
 })
 
