@@ -15,7 +15,11 @@ const connection = new web3.Connection(
     web3.clusterApiUrl(config.solana.network)
 )
 
-
+/**
+ *
+ * @param {Object} data
+ * @return {Promise<void>}
+ */
 export async function play(data) {
     const address = data.address
     const signature = data.signature
@@ -72,5 +76,5 @@ export async function play(data) {
                 status: 'lost'
             })
         }
-    })
+    }, 'confirmed')
 }
