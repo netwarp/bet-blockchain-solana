@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {number} total
+ * @param {number} percent
+ * @return {number}
+ */
 export function percent(total, percent) {
     return Math.round(total * percent / 100)
 }
@@ -14,6 +20,7 @@ export function isNumber(char) {
 /**
  *
  * @param {string} hash
+ * @return {number}
  */
 export function getLatestNumberFromHash(hash) {
     if ( ! hash.length) {
