@@ -1,6 +1,5 @@
 <script>
-    import {is_connected, public_key} from '../_store'
-    import config from '../_store'
+    import {is_connected, network, wallet} from '../_store'
 
     import ConnectWallet from '../components/Connect-Wallet'
 
@@ -11,14 +10,14 @@
 
     import * as web3 from '@solana/web3.js'
     const connection = new web3.Connection(
-        web3.clusterApiUrl(config.solana.network)
+        web3.clusterApiUrl($network)
     )
 
     async function play() {
         const transaction = new web3.Transaction().add(
             web3.SystemProgram.transfer({
                 fromPubkey: window.solana.publicKey,
-                toPubkey: config.solana.wallet,
+                toPubkey: $wallet,
                 lamports: 1000000,
             })
         )
@@ -90,7 +89,7 @@
                                 {/if}
                             </td>
                             <td>
-                                <a href="https://explorer.solana.com/tx/{play.signature}?cluster={config.solana.network}" target="_blank">
+                                <a href="https://explorer.solana.com/tx/{play.signature}?cluster={$network}" target="_blank">
                                     {play.signature}
                                 </a>
                             </td>
