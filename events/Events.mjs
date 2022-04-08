@@ -39,7 +39,7 @@ export async function play(data) {
         const solana_api = new SolanaAPI(config.solana.api_url)
         let data = await solana_api.getTransaction(signature)
 
-        let recent_block_hash = data.result.transaction.message.recentBlockhash
+        let recent_block_hash = data?.result?.transaction?.message?.recentBlockhash
 
         console.log('recent block hash:')
         console.log(recent_block_hash)
