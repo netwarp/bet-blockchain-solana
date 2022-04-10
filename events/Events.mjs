@@ -32,17 +32,34 @@ export async function play(data) {
     await transaction.save()
 
     const subscription_id = connection.onSignature(signature, async (signatureResult, context) => {
-        console.log(`signature received`)
+        console.log(`signature received: ${signature}`)
         console.log(signatureResult)
-        console.log(console.log(context))
+        console.log('---')
+        console.log(context)
+        console.log('---')
 
         const solana_api = new SolanaAPI(config.solana.api_url)
         let data = await solana_api.getTransaction(signature)
 
+        console.log(data)
         let recent_block_hash = data?.result?.transaction?.message?.recentBlockhash
+        console.log(`recent block hash: ${recent_block_hash}`)
 
-        console.log('recent block hash:')
-        console.log(recent_block_hash)
+        if (recent_block_hash === undefined) {
+            console.log('Error, so LOST')
+            await Transaction.update(
+            {status: 'lost'},
+            {where: {
+                    signature
+                }}
+            )
+            io.emit('response', {
+                signature,
+                status: 'lost'
+            })
+
+            return
+        }
 
         console.log(getLatestNumberFromHash(signature))
         console.log(getLatestNumberFromHash(recent_block_hash))
@@ -76,5 +93,5 @@ export async function play(data) {
                 status: 'lost'
             })
         }
-    }, 'processed')
+    })
 }

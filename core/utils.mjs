@@ -20,7 +20,7 @@ export function isNumber(char) {
 /**
  *
  * @param {string} hash
- * @return {number}
+ * @return {number|boolean}
  */
 export function getLatestNumberFromHash(hash) {
     if ( ! hash.length) {
