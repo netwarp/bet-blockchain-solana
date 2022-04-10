@@ -10,18 +10,13 @@
     <table>
         <thead>
             <tr>
-                <th></th>
-                <th>Address</th>
-                <th>Signature</th>
+                <th colspan="2">Signature</th>
             </tr>
         </thead>
         <tbody>
             {% for reward in rewards.rows %}
             <tr>
                 <td><img src="/images/icon-won.svg" alt="icon won"></td>
-                <td>
-                    <a target="_blank" href="https://explorer.solana.com/address/{{ reward.address }}?cluster={{ network }}">{{ reward.address }}</a>
-                </td>
                 <td>
                     <a target="_blank" href="https://explorer.solana.com/tx/{{ reward.signature }}?cluster={{ network }}">{{ reward.signature }}</a>
                 </td>
