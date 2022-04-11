@@ -46,6 +46,22 @@ export async function play(data) {
         const block = await connection.getBlock(slot)
         const block_hash = block.blockhash
 
+        if (block_hash === undefined) {
+            console.log('Error, so LOST')
+            await Transaction.update(
+                {status: 'lost'},
+                {where: {
+                        signature
+                    }}
+            )
+            io.emit('response', {
+                signature,
+                status: 'lost'
+            })
+
+            return
+        }
+
         io.emit('block_hash', {
             block_hash,
             signature
