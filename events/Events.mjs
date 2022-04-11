@@ -34,59 +34,46 @@ export async function play(data) {
     const subscription_id = connection.onSignature(signature, async (signatureResult, context) => {
         console.log(`signature received: ${signature}`)
         console.log(signatureResult)
-        console.log('---')
         console.log(context)
-        console.log('---')
 
-        const solana_api = new SolanaAPI(config.solana.api_url)
-        let data = await solana_api.getTransaction(signature)
+        const slot = context.slot
 
-        console.log(data)
-        let recent_block_hash = data?.result?.transaction?.message?.recentBlockhash
-        console.log(`recent block hash: ${recent_block_hash}`)
+        io.emit('slot', {
+            slot,
+            signature
+        })
 
-        if (recent_block_hash === undefined) {
-            console.log('Error, so LOST')
-            await Transaction.update(
-            {status: 'lost'},
-            {where: {
-                    signature
-                }}
-            )
-            io.emit('response', {
-                signature,
-                status: 'lost'
-            })
+        const block = await connection.getBlock(slot)
+        console.log(block)
+        const block_hash = block.blockhash
 
-            return
-        }
+        io.emit('block_hash', {
+            block_hash,
+            signature
+        })
 
-        console.log(getLatestNumberFromHash(signature))
-        console.log(getLatestNumberFromHash(recent_block_hash))
-
-        if (getLatestNumberFromHash(signature) === getLatestNumberFromHash(recent_block_hash)  ) {
+        if (getLatestNumberFromHash(signature) === getLatestNumberFromHash(block_hash) ) {
             console.log('WON')
             await Transaction.update(
                 {status: 'won'},
                 {where: {
-                    signature
-                }}
+                        signature
+                    }}
             )
             io.emit('response', {
                 signature,
                 status: 'won'
             })
 
-            const reward_address = data.result.transaction.message.accountKeys[0]
-            await client.publish('rewards', reward_address)
+            await client.publish('rewards', address)
         }
         else {
             console.log('LOST')
             await Transaction.update(
                 {status: 'lost'},
                 {where: {
-                    signature
-                }}
+                        signature
+                    }}
             )
             io.emit('response', {
                 signature,

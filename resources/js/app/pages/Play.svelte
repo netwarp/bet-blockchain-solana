@@ -42,6 +42,22 @@
         console.log(plays)
     }
 
+	socket.on('slot', (data) => {
+		const play = plays.find(element => element.signature === data.signature)
+        const slot = data.slot
+
+        play.slot = slot
+        plays = plays
+    })
+
+    socket.on('block_hash', (data) => {
+	    const play = plays.find(element => element.signature === data.signature)
+        const block_hash = data.block_hash
+
+	    play.block_hash = block_hash
+	    plays = plays
+    })
+
     socket.on('response', (data) => {
         const play = plays.find(element => element.signature === data.signature)
         const status = data.status
@@ -69,12 +85,15 @@
                 <thead>
                     <tr>
                         <th>Results</th>
+                        <th>Signature</th>
+                        <th>Slot</th>
+                        <th>BlockHash</th>
                     </tr>
                 </thead>
                 <tbody>
                     {#if plays.length === 0}
                         <tr>
-                            <td colspan="2">No result</td>
+                            <td colspan="4">No result</td>
                         </tr>
                     {/if}
                     {#each plays as play}
@@ -92,6 +111,20 @@
                                 <a href="https://explorer.solana.com/tx/{play.signature}?cluster={$network}" target="_blank">
                                     {play.signature}
                                 </a>
+                            </td>
+                            <td>
+                                {#if play.slot}
+                                    <a href="https://explorer.solana.com/block/{play.slot}?cluster={$network}" target="_blank">
+                                        {play.slot}
+                                    </a>
+                                {/if}
+                            </td>
+                            <td>
+                                {#if play.block_hash}
+                                    <a href="https://explorer.solana.com/block/{play.slot}?cluster={$network}" target="_blank">
+                                        {play.block_hash}
+                                    </a>
+                                {/if}
                             </td>
                         </tr>
                     {/each}
