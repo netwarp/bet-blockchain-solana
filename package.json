@@ -9,7 +9,8 @@
     "dev:server": "npx nodemon index.mjs",
     "dev:css": "npx postcss resources/sass/app.scss -o public/css/app.css -w",
     "dev:js": "npx mix watch",
-    "dev:micro:reward": "npx nodemon microservices/reward.mjs"
+    "dev:micro:reward": "npx nodemon microservices/reward.mjs",
+    "prod:js": "npx mix --production"
   },
   "dependencies": {
     "@solana/wallet-adapter-base": "^0.8.1",
