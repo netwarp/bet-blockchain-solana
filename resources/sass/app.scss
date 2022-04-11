@@ -164,6 +164,16 @@ main {
             }
         }
     }
+
+    #powered {
+        @apply
+        mt-8;
+
+        img {
+            @apply
+            mx-auto
+        }
+    }
 }
 
 .container.page {

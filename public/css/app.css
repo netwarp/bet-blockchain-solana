@@ -651,6 +651,13 @@ main {
   --tw-bg-opacity: 1;
   background-color: rgb(217 70 239 / var(--tw-bg-opacity));
 }
+.container#page-landing #powered {
+  margin-top: 2rem;
+}
+.container#page-landing #powered img {
+  margin-left: auto;
+  margin-right: auto;
+}
 .container.page {
   margin-left: auto;
   margin-right: auto;
