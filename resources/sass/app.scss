@@ -56,7 +56,16 @@ header {
                         font-bold
                         text-blue-300
                         hover:text-fuchsia-500;
+
+                        &.social {
+
+                            svg {
+                                transform: scale(1.5);
+                            }
+                        }
                     }
+
+
                 }
             }
 

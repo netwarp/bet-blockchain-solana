@@ -530,6 +530,9 @@ header .container nav .menu li a:hover {
   --tw-text-opacity: 1;
   color: rgb(217 70 239 / var(--tw-text-opacity));
 }
+header .container nav .menu li a.social svg {
+                                transform: scale(1.5);
+                            }
 header .container nav .icon-menu {
   margin-right: 2rem;
   display: block;
