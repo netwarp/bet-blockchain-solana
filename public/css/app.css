@@ -738,6 +738,8 @@ main {
 #app .sidebar .sidebar-item {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   padding: 0.5rem;
@@ -747,6 +749,10 @@ main {
 #app .sidebar .sidebar-item:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+#app .sidebar .sidebar-item span {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 #app .sidebar .sidebar-item.active {
   --tw-bg-opacity: 1;

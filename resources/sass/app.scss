@@ -257,11 +257,18 @@ main {
 
         .sidebar-item {
             @apply
+            flex
+            items-center
             p-2
             text-xl
             my-2
             bg-gray-700
             hover:bg-gray-800;
+
+            span {
+                @apply
+                mx-4
+            }
 
             &.active {
                 @apply

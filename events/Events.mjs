@@ -32,7 +32,6 @@ export async function play(data) {
     await transaction.save()
 
     const subscription_id = connection.onSignature(signature, async (signatureResult, context) => {
-
         try {
             console.log(`signature received: ${signature}`)
             console.log(signatureResult)
