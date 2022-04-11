@@ -44,7 +44,6 @@ export async function play(data) {
         })
 
         const block = await connection.getBlock(slot)
-        console.log(block)
         const block_hash = block.blockhash
 
         io.emit('block_hash', {

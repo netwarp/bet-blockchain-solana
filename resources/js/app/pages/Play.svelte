@@ -121,7 +121,7 @@
                             </td>
                             <td>
                                 {#if play.block_hash}
-                                    <a href="https://explorer.solana.com/block/{play.slot}?cluster={$network}" target="_blank">
+                                    <a href="https://explorer.solana.com/block/{play.block_hash}?cluster={$network}" target="_blank">
                                         {play.block_hash}
                                     </a>
                                 {/if}
