@@ -124,7 +124,6 @@ main {
 .container#page-landing {
     @apply
     mx-auto
-
     text-center;
 
     h1 {
@@ -135,6 +134,11 @@ main {
         mb-12
         font-bold
         md:px-48
+    }
+
+    h2 {
+        @apply
+        text-2xl
     }
 
     p {
@@ -307,7 +311,8 @@ main {
             .play-line {
                 @apply
                 mb-4
-                flex;
+                flex
+                items-center;
 
                 .button-play {
                     @apply
@@ -318,6 +323,23 @@ main {
                     bg-blue-500
                     hover:bg-blue-400
                     text-2xl
+                }
+
+                .connected-count {
+                    @apply
+                    flex
+                    items-center;
+
+                    .bubble {
+                        @apply
+                        w-4
+                        h-4
+                        bg-green-400
+                        rounded-full
+                        ml-6
+                        mr-2
+
+                    }
                 }
             }
 

@@ -609,6 +609,10 @@ main {
     line-height: 1;
   }
 }
+.container#page-landing h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .container#page-landing p {
   padding-left: 12rem;
   padding-right: 12rem;
@@ -787,6 +791,7 @@ main {
 #app .app-page .container-play .play-line {
   margin-bottom: 1rem;
   display: flex;
+  align-items: center;
 }
 #app .app-page .container-play .play-line .button-play {
   border-radius: 0.75rem;
@@ -803,6 +808,19 @@ main {
 #app .app-page .container-play .play-line .button-play:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+#app .app-page .container-play .play-line .connected-count {
+  display: flex;
+  align-items: center;
+}
+#app .app-page .container-play .play-line .connected-count .bubble {
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 #app .app-page .container-play table.result-line thead {
 

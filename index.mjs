@@ -15,10 +15,18 @@ const io = new Server(httpServer, { /* options */ })
 
 import * as Events from "./events/Events.mjs"
 
+let online = 0
 io.on('connection', (socket) => {
     console.log('connected')
+    online++
+    socket.emit('online', online)
 
     socket.on('play', (data) => Events.play(data))
+
+    socket.on('disconnect', () => {
+        online--
+        socket.emit('online', online)
+    })
 })
 
 app.use(body_parser.json())

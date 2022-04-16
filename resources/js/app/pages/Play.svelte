@@ -13,6 +13,9 @@
         web3.clusterApiUrl($network)
     )
 
+    let online = 0
+    socket.on('online', (count) => online = count)
+
     async function play() {
         const transaction = new web3.Transaction().add(
             web3.SystemProgram.transfer({
@@ -79,7 +82,10 @@
         <div class="container-play">
             <div class="play-line">
                 <button class="button-play" on:click={play}>Play</button>
-                <div class="ad"></div>
+                <div class="connected-count">
+                    <div class="bubble"></div>
+                    <span>{online} user{online > 1 ? 's' : ''} online</span>
+                </div>
             </div>
             <table class="result-line">
                 <thead>
