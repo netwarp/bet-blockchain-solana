@@ -78,6 +78,9 @@
 <div class="app-page">
     {#if $is_connected === false}
         <ConnectWallet text="Connect your wallet to play" central="true"/>
+        <div id="disclaimer">
+            This is a gamble game. By playing you confirm you are adult and crypto is allowed in your legislation.
+        </div>
     {:else }
         <div class="container-play">
             <div class="play-line">

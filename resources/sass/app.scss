@@ -292,8 +292,10 @@ main {
 
         &.central {
             @apply
-            w-5/12
+            w-full
+            md:w-5/12
             mt-32
+            rounded-md
         }
 
     }
@@ -301,6 +303,13 @@ main {
     .app-page {
         @apply
         px-4;
+
+        #disclaimer {
+            @apply
+            text-center
+            text-xs
+            mt-4
+        }
 
         .container-play {
             @apply
