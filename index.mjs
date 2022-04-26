@@ -19,14 +19,18 @@ let online = 0
 io.on('connection', (socket) => {
     console.log('connected')
     online++
+    //console.log(online)
     socket.emit('online', online)
 
-    socket.on('play', (data) => Events.play(data))
 
     socket.on('disconnect', () => {
         online--
+        //console.log(online)
         socket.emit('online', online)
     })
+
+    /** Play */
+    socket.on('play', (data) => Events.play(data))
 })
 
 app.use(body_parser.json())

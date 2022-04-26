@@ -1,20 +1,14 @@
 <script>
-    import {is_connected, network, wallet} from '../_store'
+    import {is_connected, network, wallet, socket, online} from '../_store'
 
     import ConnectWallet from '../components/Connect-Wallet'
 
     let plays = []
 
-    import { io } from "socket.io-client"
-    const socket = io()
-
     import * as web3 from '@solana/web3.js'
     const connection = new web3.Connection(
         web3.clusterApiUrl($network)
     )
-
-    let online = 0
-    socket.on('online', (count) => online = count)
 
     async function play() {
         const transaction = new web3.Transaction().add(
@@ -31,7 +25,7 @@
         console.log(signature)
 
         // Socket
-        socket.emit('play', {
+        $socket.emit('play', {
             address: window.solana.publicKey.toString(),
             signature,
         })
@@ -45,7 +39,7 @@
         console.log(plays)
     }
 
-	socket.on('slot', (data) => {
+	$socket.on('slot', (data) => {
 		const play = plays.find(element => element.signature === data.signature)
         const slot = data.slot
 
@@ -53,7 +47,7 @@
         plays = plays
     })
 
-    socket.on('block_hash', (data) => {
+    $socket.on('block_hash', (data) => {
 	    const play = plays.find(element => element.signature === data.signature)
         const block_hash = data.block_hash
 
@@ -61,7 +55,7 @@
 	    plays = plays
     })
 
-    socket.on('response', (data) => {
+    $socket.on('response', (data) => {
         const play = plays.find(element => element.signature === data.signature)
         const status = data.status
 
@@ -87,7 +81,7 @@
                 <button class="button-play" on:click={play}>Play</button>
                 <div class="connected-count">
                     <div class="bubble"></div>
-                    <span>{online} user{online > 1 ? 's' : ''} online</span>
+                    <span>{$online} user{$online > 1 ? 's' : ''} online</span>
                 </div>
             </div>
             <table class="result-line">

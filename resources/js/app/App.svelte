@@ -1,5 +1,5 @@
 <script>
-    import {view, is_connected, public_key} from './_store'
+    import {view, is_connected, public_key, online, socket} from './_store'
 
     import Play from './pages/Play'
     import History from './pages/History'
@@ -12,6 +12,10 @@
         $is_connected = false
     }
 
+	$socket.on('online', (count) => {
+		$online = count
+        console.log($online)
+    })
 </script>
 
 <div class="container">
