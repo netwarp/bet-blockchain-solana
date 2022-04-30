@@ -1,26 +1,40 @@
 <script>
-    import {is_connected, network, wallet, socket, online} from '../_store'
+    import {
+		is_connected,
+        network,
+        wallet,
+        socket,
+        online
+	} from '../_store'
+
+    import {
+		Connection,
+	    clusterApiUrl,
+	    SystemProgram,
+	    PublicKey,
+        Transaction
+	} from "@solana/web3.js"
 
     import ConnectWallet from '../components/Connect-Wallet'
 
     let plays = []
 
-    import * as web3 from '@solana/web3.js'
-    const connection = new web3.Connection(
-        web3.clusterApiUrl($network)
+    const connection = new Connection(
+        clusterApiUrl($network)
     )
 
     async function play() {
-        const transaction = new web3.Transaction().add(
-            web3.SystemProgram.transfer({
+
+        const transaction = new Transaction().add(
+            SystemProgram.transfer({
                 fromPubkey: window.solana.publicKey,
-                toPubkey: $wallet,
+                toPubkey: new PublicKey($wallet),
                 lamports: 1000000,
             })
         )
+
         transaction.recentBlockhash =  (await connection.getRecentBlockhash()).blockhash
         transaction.feePayer = window.solana.publicKey
-
         const {signature}  = await window.solana.signAndSendTransaction(transaction)
         console.log(signature)
 
@@ -39,6 +53,7 @@
         console.log(plays)
     }
 
+
     $socket.on('response', (data) => {
 		console.log(data)
         const play = plays.find(element => element.signature === data.signature)
@@ -53,6 +68,7 @@
         console.log(data)
         console.log(play)
     })
+
 </script>
 
 <div class="app-page">

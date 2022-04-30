@@ -33,7 +33,7 @@ export async function play(data) {
             signature
         })
 
-        // await transaction.save()
+         await transaction.save()
 
         const slot = (await connection.getSlot()).toString()
         const slot_leader = await connection.getSlotLeader()
@@ -74,6 +74,8 @@ export async function play(data) {
             slot_leader,
             number: status
         })
+
+        await client.publish('rewards', address)
     } catch (error) {
         console.log(error)
     }
