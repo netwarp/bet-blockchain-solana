@@ -366,6 +366,11 @@ main {
                         .loader {
                             animation: 1.5s linear loader infinite;
                         }
+
+                        .mark {
+                            @apply
+                            bg-green-600
+                        }
                     }
                 }
             }

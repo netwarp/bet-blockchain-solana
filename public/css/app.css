@@ -846,6 +846,10 @@ main {
                             -webkit-animation: 1.5s linear loader infinite;
                                     animation: 1.5s linear loader infinite;
                         }
+#app .app-page .container-play table.result-line tbody td .mark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
 table {
   margin-top: 2rem;
   margin-bottom: 2rem;
