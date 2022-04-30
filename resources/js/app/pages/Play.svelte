@@ -32,40 +32,26 @@
 
         plays = [{
             status: 'loading',
-            signature
+            signature,
         }, ...plays]
 
         console.log('current plays')
         console.log(plays)
     }
 
-	$socket.on('slot', (data) => {
-		const play = plays.find(element => element.signature === data.signature)
-        const slot = data.slot
-
-        play.slot = slot
-        plays = plays
-    })
-
-    $socket.on('block_hash', (data) => {
-	    const play = plays.find(element => element.signature === data.signature)
-        const block_hash = data.block_hash
-
-	    play.block_hash = block_hash
-	    plays = plays
-    })
-
     $socket.on('response', (data) => {
+		console.log(data)
         const play = plays.find(element => element.signature === data.signature)
-        const status = data.status
 
-        play.status = status
+        play.status = data.status
+        play.slot = data.slot
+        play.slot_leader = data.slot_leader
+        play.number = data.number.toString()
 
         plays = plays
 
         console.log(data)
         console.log(play)
-        console.log(status)
     })
 </script>
 
@@ -90,7 +76,7 @@
                         <th>Results</th>
                         <th>Signature</th>
                         <th>Slot</th>
-                        <th>BlockHash</th>
+                        <th>Slot leader</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -112,22 +98,28 @@
                             </td>
                             <td>
                                 <a href="https://explorer.solana.com/tx/{play.signature}?cluster={$network}" target="_blank">
-                                    {play.signature}
+                                    {#each play.signature as char}
+                                        <i class:mark={play.number === char}>{char}</i>
+                                    {/each}
                                 </a>
                             </td>
                             <td>
-                                {#if play.slot}
-                                    <a href="https://explorer.solana.com/block/{play.slot}?cluster={$network}" target="_blank">
-                                        {play.slot}
-                                    </a>
-                                {/if}
+                                <a href="https://explorer.solana.com/block/{play.slot}?cluster={$network}" target="_blank">
+                                    {#if play.slot}
+                                        {#each play.slot as char}
+                                            <i class:mark={play.number === char}>{char}</i>
+                                        {/each}
+                                    {/if}
+                                </a>
                             </td>
                             <td>
-                                {#if play.block_hash}
-                                    <a href="https://explorer.solana.com/block/{play.block_hash}?cluster={$network}" target="_blank">
-                                        {play.block_hash}
-                                    </a>
-                                {/if}
+                                <a href="https://explorer.solana.com/tx/{play.signature}?cluster={$network}" target="_blank">
+                                    {#if play.slot_leader}
+                                        {#each play.slot_leader as char}
+                                            <i class:mark={play.number === char}>{char}</i>
+                                        {/each}
+                                    {/if}
+                                </a>
                             </td>
                         </tr>
                     {/each}

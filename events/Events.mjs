@@ -9,7 +9,7 @@ const client = createClient()
 client.on('error', (err) => console.log('Redis Client Error', err))
 await client.connect()
 
-import {getLatestNumberFromHash} from '../core/utils.mjs'
+import {bet} from '../core/utils.mjs'
 
 const connection = new web3.Connection(
     web3.clusterApiUrl(config.solana.network)
@@ -21,96 +21,60 @@ const connection = new web3.Connection(
  * @return {Promise<void>}
  */
 export async function play(data) {
-    const address = data.address
-    const signature = data.signature
+    try {
+        //console.log('new play')
+        // console.log(data)
 
-    const transaction = await Transaction.build({
-        address,
-        signature
-    })
+        const address = data.address
+        const signature = data.signature
 
-    await transaction.save()
+        const transaction = await Transaction.build({
+            address,
+            signature
+        })
 
-    const subscription_id = connection.onSignature(signature, async (signatureResult, context) => {
-        try {
-            console.log(`signature received: ${signature}`)
-            console.log(signatureResult)
-            console.log(context)
+        // await transaction.save()
 
-            const slot = context.slot
+        const slot = (await connection.getSlot()).toString()
+        const slot_leader = await connection.getSlotLeader()
 
-            io.emit('slot', {
-                slot,
-                signature
-            })
+        const status = bet(signature, slot, slot_leader)
 
-            const block = await connection.getBlock(slot)
-            const block_hash = block.blockhash
-
-            if (block_hash === undefined) {
-                console.log('Error, so LOST')
-                await Transaction.update(
-                    {status: 'lost'},
-                    {where: {
-                            signature
-                        }}
-                )
-                io.emit('response', {
-                    signature,
-                    status: 'lost'
-                })
-
-                return
-            }
-
-            io.emit('block_hash', {
-                block_hash,
-                signature
-            })
-
-            if (getLatestNumberFromHash(signature) === getLatestNumberFromHash(block_hash) ) {
-                console.log('WON')
-                await Transaction.update(
-                    {status: 'won'},
-                    {where: {
-                            signature
-                        }}
-                )
-                io.emit('response', {
-                    signature,
-                    status: 'won'
-                })
-
-                await client.publish('rewards', address)
-            }
-            else {
-                console.log('LOST')
-                await Transaction.update(
-                    {status: 'lost'},
-                    {where: {
-                            signature
-                        }}
-                )
-                io.emit('response', {
-                    signature,
-                    status: 'lost'
-                })
-            }
-        } catch (error) {
-            console.log('OH SHIT')
-            console.log(error)
-
-            console.log('Error, so LOST')
+        if ( ! status) {
+            console.log('LOST')
             await Transaction.update(
                 {status: 'lost'},
                 {where: {
                         signature
                     }}
             )
+
             io.emit('response', {
                 signature,
-                status: 'lost'
+                status: 'lost',
+                slot,
+                slot_leader,
+                number: status
             })
+
+            return
         }
-    })
+
+        console.log('WON')
+        await Transaction.update(
+            {status: 'won'},
+            {where: {
+                    signature
+                }}
+        )
+        io.emit('response', {
+            signature,
+            status: 'won',
+            slot,
+            slot_leader,
+            number: status
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }

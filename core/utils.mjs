@@ -43,3 +43,23 @@ export function getLatestNumberFromHash(hash) {
 
     return parseInt(latest_number)
 }
+
+/**
+ *
+ * @param {string} signature
+ * @param {string} slot
+ * @param {string} slot_leader
+ */
+export function bet(signature, slot, slot_leader) {
+
+    for (let i = 0; i < 10; i++) {
+
+        const c = signature.includes(i.toString()) && slot.includes(i.toString()) && slot_leader.includes(i.toString())
+
+        if (c) {
+            return i
+        }
+    }
+
+    return false
+}
